@@ -168,6 +168,14 @@
     <Content Include="Content\Images\slice_05.png" />
     <Content Include="Content\Images\slice_10.png" />
     <Content Include="Global.asax" />
+    <Content Include="Prototype\Cart.html" />
+    <Content Include="Prototype\Login-placeholder.html" />
+    <Content Include="Prototype\Mail1.html" />
+    <Content Include="Prototype\Mail2.html" />
+    <Content Include="Prototype\Main.html" />
+    <Content Include="Prototype\OrdersList.html" />
+    <Content Include="Prototype\Product-details.html" />
+    <Content Include="Prototype\ProductList.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

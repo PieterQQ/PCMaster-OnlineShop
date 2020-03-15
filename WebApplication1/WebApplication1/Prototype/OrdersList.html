@@ -1,0 +1,337 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Index</title>
+    <meta name="viewport" content="width=device-width" />
+    <link href="/Content/Site.css" rel="stylesheet" />
+
+    <link href="/Content/themes/base/jquery-ui.css" rel="stylesheet" />
+
+    <style>
+        .manageLink {
+            height: 42px;
+            float: left;
+            line-height: 40px;
+            font-size: 14px;
+            padding-left: 40px;
+            /*background-color: #585858;*/
+            background-color: #39312E;
+            color: white;
+        }
+
+        a.manageLink, a.manageLink:hover, a.manageLink:visited {
+            color: white;
+        }
+    </style>
+
+</head>
+<body>
+    <header>
+        <div style="overflow: hidden; margin-bottom: 30px;">
+
+            <a class="manageLink" href="">
+                Start
+            </a>
+            <a class="manageLink" href="">
+                Twoje dane
+            </a>
+            <a class="manageLink" href="">
+                Dodaj
+            </a>
+            <a class="manageLink" href="">
+                Zamówienia
+            </a>
+            <a class="manageLink" href="" style="width: 100px">
+                Historia
+            </a>
+
+
+
+            <a id="cart-header-link" href="/Cart">
+                KOSZYK (<span id="cart-header-items-count">0</span>)
+                <span id="cart-header-logo"></span>
+            </a>
+
+
+            <div id="login-header">
+                <form action="/Account/Logoff" class="navbar-right" id="logoutForm" method="post">
+                    <input name="__RequestVerificationToken" type="hidden" value="CM2pOsa_N6D0rmDCIIEt4tYdxy-O3pqFKVHBccHEbGgvPTU4vyaGFnIg3geOpJht_KXzA4FS5P_TYof91PWy5iuca7U3ND9_W97LdXYdO7gzCoCcy4OFAMxOr1sA7i5xjcm-LaG6HNBD19b9xRfJNw2" />            <div>
+                        <a href="/Manage" title="Manage">bzass@microsoft.com</a>
+
+                    </div>
+                    <div>
+                        <a href="javascript:document.getElementById('logoutForm').submit()">Wyloguj</a>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+
+    </header>
+
+    <div>
+
+
+        <hr />
+
+        <h2 class="manageHeader">Twoje zamówienia</h2>
+
+        <div>
+            <table id="orders-table">
+                <tr>
+                    <td>
+                        <strong>Nr zamówienia: </strong>1                        
+                    </td>
+                    <td>
+                        <strong>Data: </strong>
+                        2015-01-02
+                    </td>
+                    <td>
+                        <strong>Stan: </strong><br />
+                        nowe
+                    </td>
+                    <td>
+                        <strong>Dane wysyłkowe:</strong><br />
+                        Jan Kowalski <br />
+                        al. Jerozolimskie 195a <br />
+                        02-222 Warszawa <br />
+                    </td>
+                    <td>
+                        <strong>Uwagi: </strong><br />
+                        Blablabla
+                    </td>
+                    <td>
+                        <strong>Łączny koszt:</strong> 121 zł
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="6">
+                        <section>
+                            <ul class="ThreeColumnsStaticCoversList large-cover-list-bottom">
+                                <li>
+                                    <article>
+                                        <a class="productdetailslink" href="/album-2.html">
+                                            <img class="album-cover" src="/Content/Covers/2.png" />
+                                            <h1>
+                                                Dillusion - All that nothing<br />
+                                                <strong>sztuk: 2, łącznie: 121 zł</strong>
+                                            </h1>
+                                        </a>
+                                    </article>
+                                </li>
+                                <li>
+                                    <article>
+                                        <a class="productdetailslink" href="/album-3.html">
+                                            <img class="album-cover" src="/Content/Covers/3.png" />
+                                            <h1>
+                                                Allfor - Golden suffering
+                                            </h1>
+                                        </a>
+                                    </article>
+                                </li>
+                                <li>
+                                    <article>
+                                        <a class="productdetailslink" href="/album-1.html">
+                                            <img class="album-cover" src="/Content/Covers/1.png" />
+                                            <h1>
+                                                The Reds - More Way
+                                            </h1>
+                                        </a>
+                                    </article>
+                                </li>
+                            </ul>
+                        </section>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="6"></td>
+                </tr>
+                <!-- Next order -->
+                <tr>
+                    <td>
+                        <strong>Nr zamówienia: </strong>1
+                    </td>
+                    <td>
+                        <strong>Data: </strong>
+                        2015-01-02
+                    </td>
+                    <td>
+                        <strong>Stan: </strong><br />
+                        nowe
+                    </td>
+                    <td>
+                        <strong>Dane wysyłkowe:</strong><br />
+                        Jan Kowalski <br />
+                        al. Jerozolimskie 195a <br />
+                        02-222 Warszawa <br />
+                    </td>
+                    <td>
+                        <strong>Uwagi: </strong><br />
+                        Blablabla
+                    </td>
+                    <td>
+                        <strong>Łączny koszt:</strong> 121 zł
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="6">
+                        <section>
+                            <ul class="ThreeColumnsStaticCoversList large-cover-list-bottom">
+                                <li>
+                                    <article>
+                                        <a class="productdetailslink" href="/album-2.html">
+                                            <img class="album-cover" src="/Content/Covers/2.png" />
+                                            <h1>
+                                                Dillusion - All that nothing<br />
+                                                <strong>sztuk: 2, łącznie: 121 zł</strong>
+                                            </h1>
+                                        </a>
+                                    </article>
+                                </li>
+                                <li>
+                                    <article>
+                                        <a class="productdetailslink" href="/album-3.html">
+                                            <img class="album-cover" src="/Content/Covers/3.png" />
+                                            <h1>
+                                                Allfor - Golden suffering
+                                            </h1>
+                                        </a>
+                                    </article>
+                                </li>
+                                <li>
+                                    <article>
+                                        <a class="productdetailslink" href="/album-1.html">
+                                            <img class="album-cover" src="/Content/Covers/1.png" />
+                                            <h1>
+                                                The Reds - More Way
+                                            </h1>
+                                        </a>
+                                    </article>
+                                </li>
+                            </ul>
+                        </section>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="6"></td>
+                </tr>
+                <!-- Next order -->
+                <tr class="newOrder">
+                    <td style="padding: 10px">
+                        <strong>Nr zamówienia: </strong>1
+                    </td>
+                    <td style="padding: 10px">
+                        <strong>Data: </strong>
+                        2015-01-02
+                    </td>
+                    <td style="padding: 10px">
+                        <strong>Stan: </strong><br />
+                        <select style="margin-top: 10px">
+                            <option>nowe</option>
+                            <option>wysłano</option>
+                        </select>
+                    </td>
+                    <td style="padding: 10px;">
+                        <strong>Dane wysyłkowe:</strong><br />
+                        Jan Kowalski <br />
+                        al. Jerozolimskie 195a <br />
+                        02-222 Warszawa <br />
+                    </td>
+                    <td style="padding: 10px;">
+                        <strong>Uwagi: </strong><br />
+                        Blablabla
+                    </td>
+                    <td style="padding: 10px">
+                        <strong>Łączny koszt:</strong> 121 zł
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="6">
+                        <section>
+                            <ul class="ThreeColumnsStaticCoversList large-cover-list-bottom">
+                                <li>
+                                    <article>
+                                        <a class="productdetailslink" href="/album-2.html">
+                                            <img class="album-cover" src="/Content/Covers/2.png" />
+                                            <h1>
+                                                Dillusion - All that nothing
+                                            </h1>
+                                        </a>
+                                    </article>
+                                </li>
+                                <li>
+                                    <article>
+                                        <a class="productdetailslink" href="/album-3.html">
+                                            <img class="album-cover" src="/Content/Covers/3.png" />
+                                            <h1>
+                                                Allfor - Golden suffering
+                                            </h1>
+                                        </a>
+                                    </article>
+                                </li>
+                                <li>
+                                    <article>
+                                        <a class="productdetailslink" href="/album-1.html">
+                                            <img class="album-cover" src="/Content/Covers/1.png" />
+                                            <h1>
+                                                The Reds - More Way
+                                            </h1>
+                                        </a>
+                                    </article>
+                                </li>
+                                <li>
+                                    <article>
+                                        <a class="productdetailslink" href="/album-1.html">
+                                            <img class="album-cover" src="/Content/Covers/1.png" />
+                                            <h1>
+                                                The Reds - More Way
+                                            </h1>
+                                        </a>
+                                    </article>
+                                </li>
+                            </ul>
+                        </section>
+                    </td>
+                </tr>
+
+            </table>
+        </div>
+
+
+
+    </div>
+
+    <footer>
+        <nav>
+            <ul>
+                <li><a href="">O nas</a></li>
+                <li><a href="">Kontakt</a></li>
+                <li><a href="">Wysyłka</a></li>
+                <li><a href="">Regulamin</a></li>
+            </ul>
+        </nav>
+        <div id="footer-cd-logo">
+            <img src="/Content/images/footer-cd.png" />
+        </div>
+
+        <div id="footer-copyright">
+            Copyright &copy; 2015 Spod Igły
+        </div>
+    </footer>
+
+
+    <script src="/Scripts/jquery-1.10.2.js"></script>
+    <script src="/Scripts/jquery.validate.js"></script>
+    <script src="/Scripts/jquery.validate.unobtrusive.js"></script>
+
+
+    <!-- Visual Studio Browser Link -->
+    <script type="application/json" id="__browserLink_initializationData">
+        {"appName":"Internet Explorer","requestId":"882445a7441849f988501d1f5061eb64"}
+    </script>
+    <script type="text/javascript" src="https://localhost:44399/90ba4d321eda443ea8ebcaadc8e6f611/browserLink" async="async"></script>
+    <!-- End Browser Link -->
+
+</body>
+</html>
