@@ -167,15 +167,6 @@
     <Content Include="Content\Images\slice_03.png" />
     <Content Include="Content\Images\slice_05.png" />
     <Content Include="Content\Images\slice_10.png" />
-    <Content Include="Content\jquery.mobile-1.1.0.css" />
-    <Content Include="Content\jquery.mobile-1.1.0.min.css" />
-    <Content Include="Content\jquery.mobile.structure-1.1.0.css" />
-    <Content Include="Content\jquery.mobile.structure-1.1.0.min.css" />
-    <Content Include="Content\jquery.mobile.theme-1.1.0.css" />
-    <Content Include="Content\jquery.mobile.theme-1.1.0.min.css" />
-    <Content Include="Content\Site-prototype.css" />
-    <Content Include="Content\Site.css" />
-    <Content Include="Content\Site.Mobile.css" />
     <Content Include="Global.asax" />
     <Content Include="Prototype\Cart.html" />
     <Content Include="Prototype\Login-placeholder.html" />
@@ -209,7 +200,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\themes\" />
     <Folder Include="Controllers\" />
     <Folder Include="Models\" />
   </ItemGroup>
