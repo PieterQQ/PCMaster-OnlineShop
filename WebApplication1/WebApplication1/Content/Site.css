@@ -1,0 +1,1217 @@
+﻿html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+}
+
+body {
+    line-height: 1;
+}
+
+input, select, textarea, button {
+    font-family: inherit;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+    nav ul {
+        list-style: none;
+    }
+
+blockquote, q {
+    quotes: none;
+}
+
+    blockquote:before, blockquote:after,
+    q:before, q:after {
+        content: '';
+        content: none;
+    }
+
+a {
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+}
+
+/* change colours to suit your needs */
+ins {
+    background-color: #ff9;
+    color: #000;
+    text-decoration: none;
+}
+
+/* change colours to suit your needs */
+mark {
+    background-color: #ff9;
+    color: #000;
+    font-style: italic;
+    font-weight: bold;
+}
+
+del {
+    text-decoration: line-through;
+}
+
+abbr[title], dfn[title] {
+    border-bottom: 1px dotted;
+    cursor: help;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* change border colour to suit your needs */
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #DADADA;
+    margin: 1em 0;
+    padding: 0;
+}
+
+input, select {
+    vertical-align: middle;
+}
+
+/* Main page styles */
+
+body {
+    width: 1000px;
+    margin: auto;
+    font-family: 'Segoe UI';
+}
+
+a:hover, a:visited, a:link, a:active {
+    text-decoration: none;
+    color: black;
+}
+
+
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hidden {
+    display: none;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+#facebook-header {
+    width: 233px;
+    height: 42px;
+    background-color: #39312E;
+    color: white;
+    float: left;
+    line-height: 40px;
+    font-size: 14px;
+    background-image: url(../Content/Images/fb_white.png);
+    background-repeat: no-repeat;
+    background-position: 4% 55%;
+    padding-left: 40px;
+}
+
+#cart-header-link {
+    width: 143px;
+    height: 42px;
+    background-color: #39312E;
+    color: white;
+    float: right;
+    line-height: 40px;
+    font-size: 14px;
+    text-align: center;
+}
+
+    #cart-header-link > #cart-header-logo {
+        width: 42px;
+        height: 42px;
+        background-color: #585858;
+        float: right;
+        background-image: url(../Content/Images/cart_white.png);
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+#main-header-logo {
+    margin-top: 25px;
+    margin-bottom: 35px;
+    display: block;
+}
+
+#baner-main {
+    vertical-align: top;
+}
+
+nav.genres-horizontal ul {
+    overflow: hidden;
+    border-left: 1px solid #E5E5E5;
+    border-top: 1px solid #E5E5E5;
+    font-size: 18px;
+    font-family: 'Segoe UI Semibold', 'Segoe WP', 'Segoe UI';
+}
+
+    nav.genres-horizontal ul li {
+        margin: auto;
+        float: left;
+        width: 332px;
+        /*padding-left: 50px;*/
+        height: 54px;
+        text-align: left;
+        border-right: 1px solid #E5E5E5;
+        border-bottom: 1px solid #E5E5E5;
+        line-height: 54px;
+    }
+
+        nav.genres-horizontal ul li a {
+            width: 100%;
+            display: block;
+            height: 100%;
+            padding-left: 127px;
+            background-repeat: no-repeat;
+            background-position-x: 50px;
+            background-position-y: 50%;
+        }
+
+        nav.genres-horizontal ul li:hover {
+            -moz-box-shadow: inset 0 0 3px #bbbbbb;
+            -webkit-box-shadow: inset 0 0 3px #bbbbbb;
+            box-shadow: inset 0 0 3px #bbbbbb;
+        }
+
+
+#productlist-content {
+    overflow: hidden;
+}
+
+#productlist-rightsection {
+    float: left;
+    margin-left: 29px;
+}
+
+#breadcrumb-section {
+    height: 28px;
+    font-size: 14px;
+}
+
+    #breadcrumb-section a {
+        margin-left: 5px;
+        width: 200px;
+    }
+
+
+nav.genres-vertical {
+    width: 202px;
+    font-size: 18px;
+    font-family: 'Segoe UI Semibold', 'Segoe WP', 'Segoe UI';
+    border-right: 1px solid #E5E5E5;
+    float: left;
+}
+
+    nav.genres-vertical ul li {
+        height: 50px;
+        line-height: 50px;
+    }
+
+        nav.genres-vertical ul li:hover {
+            background-color: #EBEBEB;
+        }
+
+        nav.genres-vertical ul li a {
+            width: 100%;
+            display: block;
+            height: 100%;
+            padding-left: 75px;
+            background-repeat: no-repeat;
+            background-position-x: 5px;
+            background-position-y: 50%;
+        }
+
+#product-details-section {
+    width: 768px;
+    float: left;
+    margin-top: 20px;
+}
+
+#product-details-left {
+    width: 335px;
+    float: left;
+    margin-right: 28px;
+}
+
+    #product-details-left img {
+        height: 335px;
+        float: left;
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+
+#product-details-share {
+    margin-top: 40px;
+    margin-left: 62px;
+    text-align: center;
+    display: block;
+    float: left;
+    width: 280px;
+}
+
+    #product-details-share a {
+        margin-top: 30px;
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 60px;
+        height: 60px;
+        float: left;
+    }
+
+    #product-details-share > div {
+        width: 1px;
+        height: 120px;
+        border-left: 1px solid #E5E5E5;
+        float: left;
+    }
+
+    #product-details-share a:first-child {
+        margin-right: 50px;
+        background-image: url(../Content/Images/fb-share.png);
+    }
+
+    #product-details-share a:last-child {
+        margin-left: 50px;
+        background-image: url(../Content/Images/twitter-share.png);
+    }
+
+#product-details-right {
+    float: left;
+    width: 405px;
+}
+
+    #product-details-right #product-details-names {
+        border: 5px solid #7C7C7C;
+    }
+
+        #product-details-right #product-details-names > h1 {
+            margin-top: 20px;
+            font-family: 'Segoe UI Light';
+            font-size: 38px;
+            text-transform: uppercase;
+            font-weight: normal;
+            color: #39312d;
+            text-align: center;
+        }
+
+        #product-details-right #product-details-names > h2 {
+            margin-top: 15px;
+            margin-bottom: 20px;
+            font-size: 20px;
+            font-family: 'Segoe UI Light';
+            text-transform: uppercase;
+            font-weight: normal;
+            color: #39312d;
+            text-align: center;
+        }
+
+#product-details-price {
+    overflow: hidden;
+}
+
+    #product-details-price > div {
+        float: left;
+        width: 332px;
+        height: 67px;
+        text-align: center;
+        background-color: #585858;
+        color: white;
+        font-size: 56px;
+        line-height: 56px;
+        font-weight: normal;
+    }
+
+        #product-details-price > div > span {
+            font-size: 19px;
+            font-family: 'Segoe UI Light';
+            margin-left: 5px;
+        }
+
+    #product-details-price > a {
+        float: left;
+        width: 73px;
+        height: 67px;
+        background-color: #39312E;
+        background-image: url(../Content/Images/cart-details.png);
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+
+#product-details-description {
+    font-size: 18px;
+    line-height: 22px;
+    color: #39312E;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    text-align: justify;
+}
+
+#product-details-info {
+    font-size: 18px;
+    line-height: 22px;
+    color: #39312E;
+    margin-top: 40px;
+    text-align: justify;
+    border-top: 1px solid #E5E5E5;
+    padding-top: 40px;
+}
+
+#productlist-section {
+    width: 768px;
+    margin-top: 20px;
+}
+
+ul.large-cover-list li {
+    width: 333.33px;
+    height: 333.33px;
+}
+
+    ul.large-cover-list li a h1 {
+        top: 45%;
+    }
+
+    ul.large-cover-list li a:hover h1 {
+        top: 46%;
+    }
+
+ul.small-cover-list li {
+    width: 256px;
+    height: 256px;
+}
+
+    ul.small-cover-list li a h1 {
+        top: 40%;
+    }
+
+    ul.small-cover-list li a:hover h1 {
+        top: 41%;
+    }
+
+
+ul.ThreeColumnsCoversList {
+    overflow: hidden;
+    list-style-type: none;
+    font-size: 18px;
+}
+
+    ul.ThreeColumnsCoversList li {
+        float: left;
+        position: relative;
+        /*opacity: 0.2;*/
+    }
+
+        ul.ThreeColumnsCoversList li article {
+            height: 100%;
+        }
+
+        ul.ThreeColumnsCoversList li a.addtocartlink {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+        }
+
+            ul.ThreeColumnsCoversList li a.addtocartlink img {
+                z-index: 2;
+                position: relative;
+                vertical-align: top;
+            }
+
+        ul.ThreeColumnsCoversList li a.productdetailslink {
+            display: block;
+            height: 100%;
+        }
+
+        ul.ThreeColumnsCoversList li a h1 {
+            background-color: rgba(255, 255, 255, 0.2);
+            vertical-align: central;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            text-align: center;
+            position: absolute;
+            width: 100%;
+            font-weight: normal;
+            /* More intensive album title */
+            /* font-family: 'Segoe UI Semibold', 'Segoe WP', 'Segoe UI'; */
+            -webkit-transition: all 1s ease;
+            -o-transition: all 1s ease;
+            -moz-transition: all 1s ease;
+            transition: all 1s ease;
+        }
+
+        ul.ThreeColumnsCoversList li a:hover h1 {
+            background-color: rgba(255, 255, 255, 0.85);
+            -webkit-transition: all 0.5s ease;
+            -o-transition: all 0.5s ease;
+            -moz-transition: all 0.5s ease;
+            transition: all 0.5s ease;
+        }
+
+        ul.ThreeColumnsCoversList li a img.album-cover {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            z-index: -1;
+            opacity: 0.1;
+            -webkit-transition: opacity 0.5s ease;
+            -o-transition: opacity 0.5s ease;
+            -moz-transition: opacity 0.5s ease;
+            transition: opacity 0.5s ease;
+        }
+
+        ul.ThreeColumnsCoversList li a:hover img.album-cover {
+            opacity: 0.8;
+            -webkit-transition: opacity 1s ease;
+            -o-transition: opacity 1s ease;
+            -moz-transition: opacity 1s ease;
+            transition: opacity 1s ease;
+        }
+
+ul.large-cover-list-bottom li {
+    width: 333.33px;
+    height: 333.33px;
+    font-size: 15px;
+}
+
+    ul.large-cover-list-bottom li a h1 {
+        bottom: 0px;
+    }
+
+
+ul.ThreeColumnsStaticCoversList {
+    overflow: hidden;
+    list-style-type: none;
+    font-size: 18px;
+}
+
+    ul.ThreeColumnsStaticCoversList li {
+        float: left;
+        position: relative;
+        /*opacity: 0.2;*/
+    }
+
+        ul.ThreeColumnsStaticCoversList li article {
+            height: 100%;
+        }
+
+
+        ul.ThreeColumnsStaticCoversList li a.productdetailslink {
+            display: block;
+            height: 100%;
+        }
+
+        ul.ThreeColumnsStaticCoversList li a h1 {
+            background-color: rgba(255, 255, 255, 0);
+            vertical-align: central;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            text-align: center;
+            position: absolute;
+            width: 100%;
+            font-weight: normal;
+            background-color: rgba(255, 255, 255, 0.85);
+        }
+
+        ul.ThreeColumnsStaticCoversList li a:hover h1 {
+            background-color: rgba(255, 255, 255, 0.85);
+        }
+
+        ul.ThreeColumnsStaticCoversList li a img.album-cover {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            z-index: -1;
+        }
+
+        ul.ThreeColumnsStaticCoversList li a:hover img.album-cover {
+        }
+
+.manageHeader {
+    margin-bottom: 30px;
+}
+
+#orders-table {
+    width: 100%;
+    font-size: 14px;
+    line-height: 17px;
+}
+
+    #orders-table tr.newOrder:nth-child(3n+1) {
+        background-color: #fff5bd;
+        -moz-transition-duration: 3s;
+        -o-transition-duration: 3s;
+        -webkit-transition-duration: 3s;
+        transition-duration: 3s;
+    }
+
+    #orders-table tr:nth-child(3n+1) {
+        background-color: #f1f1f1;
+        -moz-transition-duration: 3s;
+        -o-transition-duration: 3s;
+        -webkit-transition-duration: 3s;
+        transition-duration: 3s;
+    }
+
+        #orders-table tr:nth-child(3n+1) td {
+            padding: 10px;
+        }
+
+        #orders-table tr:nth-child(3n) td {
+            height: 35px;
+        }
+
+#search-form {
+    float: right;
+    padding: 2px 5px 2px 2px;
+    border: 1px solid #e0e0e0;
+}
+
+    #search-form input[type=search] {
+        border: none;
+        height: 25px;
+        width: 224px;
+    }
+
+    #search-form input[type=submit] {
+        width: 20px;
+        border: none;
+        height: 20px;
+        padding: 5px;
+        background-size: 100% 100%;
+        background: transparent url(Images/searchlogo.png) no-repeat;
+    }
+
+div.newFlag {
+    background-image: url(Images/new.png);
+    background-repeat: no-repeat;
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+div.bestsellerFlag {
+    background-image: url(Images/bestseller.png);
+    background-repeat: no-repeat;
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.content-section {
+    width: 748px;
+    float: left;
+    margin-top: 30px;
+    padding-left: 20px;
+}
+
+div.section-header {
+    border-bottom: 1px solid #DADADA;
+    margin-bottom: 25px;
+}
+
+    div.section-header h1 {
+        width: 742px;
+        font-size: 18px;
+        font-weight: normal;
+        font-family: 'Segoe WP SemiBold';
+        margin-bottom: 10px;
+        margin-left: 20px;
+    }
+
+#cart-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+    #cart-table tr {
+        border-bottom: 1px solid #DADADA;
+    }
+
+        #cart-table tr td {
+            padding-top: 25px;
+            padding-bottom: 25px;
+            vertical-align: middle;
+        }
+
+            #cart-table tr td img {
+                width: 138px;
+                height: 138px;
+            }
+
+            #cart-table tr td:nth-child(1) {
+                width: 138px;
+                height: 138px;
+                vertical-align: middle;
+            }
+
+            #cart-table tr td:nth-child(2) {
+                width: 300px;
+                padding-left: 15px;
+                text-align: left;
+            }
+
+            #cart-table tr td:nth-child(3) {
+                width: 60px;
+                text-align: center;
+            }
+
+            #cart-table tr td:nth-child(4) {
+                width: 160px;
+                text-align: center;
+            }
+
+            #cart-table tr td:nth-child(5) {
+                width: 70px;
+                text-align: center;
+            }
+
+#cart-empty-message {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.section-button-container {
+    overflow: hidden;
+}
+
+    .section-button-container :nth-child(1) {
+        float: left;
+    }
+
+    .section-button-container :nth-child(2) {
+        float: right;
+    }
+
+#total-price {
+    width: 100%;
+    text-align: right;
+    margin-top: 25px;
+    margin-bottom: 60px;
+    font-family: 'Segoe UI SemiBold';
+    font-size: 18px;
+}
+
+.button-link {
+    height: 40px;
+    background-color: #595959;
+    color: #dfdfdf;
+    text-transform: uppercase;
+    font-size: 18px;
+    line-height: 38px;
+    padding: 2px 15px 2px 15px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+input.button-link {
+    border: 0;
+    line-height: 38px;
+    height: 44px;
+    cursor: pointer;
+}
+
+a.button-link:visited, a.button-link:link, a.button-link:active {
+    color: #dfdfdf;
+}
+
+#checkout-address-table {
+    margin-left: 20px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border-style: none;
+}
+
+    #checkout-address-table tr {
+        height: 40px;
+    }
+
+        #checkout-address-table tr td {
+            vertical-align: middle;
+        }
+
+            #checkout-address-table tr td:first-child {
+                padding-right: 50px;
+                vertical-align: middle;
+            }
+
+            #checkout-address-table tr td:nth-child(2) {
+                vertical-align: middle;
+            }
+
+            #checkout-address-table tr td:nth-child(3) {
+                padding-left: 10px;
+                font-size: 15px;
+                color: red;
+            }
+
+    #checkout-address-table input {
+        border: 1px solid gray;
+        width: 250px;
+        height: 20px;
+        padding: 5px;
+    }
+
+    #checkout-address-table textarea {
+        width: 250px;
+        border: 1px solid gray;
+        padding: 5px;
+        margin-top: 5px;
+    }
+
+#userdata-address-table {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border-style: none;
+}
+
+    #userdata-address-table tr {
+        height: 40px;
+    }
+
+        #userdata-address-table tr td {
+            vertical-align: middle;
+        }
+
+            #userdata-address-table tr td:first-child {
+                padding-right: 50px;
+                vertical-align: middle;
+            }
+
+            #userdata-address-table tr td:nth-child(2) {
+                vertical-align: middle;
+            }
+
+            #userdata-address-table tr td:nth-child(3) {
+                padding-left: 10px;
+                font-size: 15px;
+                color: red;
+            }
+
+    #userdata-address-table input {
+        border: 1px solid gray;
+        width: 250px;
+        height: 20px;
+        padding: 5px;
+    }
+
+    #userdata-address-table textarea {
+        width: 250px;
+        border: 1px solid gray;
+        padding: 5px;
+        margin-top: 5px;
+    }
+
+#albumedit-address-table {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border-style: none;
+}
+
+    #albumedit-address-table tr {
+        height: 40px;
+    }
+
+        #albumedit-address-table tr td {
+            vertical-align: middle;
+        }
+
+            #albumedit-address-table tr td:first-child {
+                padding-right: 50px;
+                vertical-align: middle;
+            }
+
+            #albumedit-address-table tr td:nth-child(2) {
+                vertical-align: middle;
+            }
+
+            #albumedit-address-table tr td:nth-child(3) {
+                padding-left: 10px;
+                font-size: 15px;
+                color: red;
+            }
+
+    #albumedit-address-table input {
+        border: 1px solid gray;
+        width: 250px;
+        height: 20px;
+        padding: 5px;
+    }
+
+    #albumedit-address-table textarea {
+        width: 250px;
+        border: 1px solid gray;
+        padding: 5px;
+        margin-top: 5px;
+    }
+
+    #albumedit-address-table select {
+        width: 100%;
+        height: 30px;
+    }
+
+div.upload {
+    width: 157px;
+    height: 57px;
+    background: url(Images/upload.png);
+    overflow: hidden;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+}
+
+div.upload input {
+    display: block !important;
+    width: 157px !important;
+    height: 57px !important;
+    opacity: 0 !important;
+    overflow: hidden !important;
+}
+
+#login-error {
+    color: red;
+    margin-top: 25px;
+    text-align: center;
+}
+
+
+    #login-error .validation-summary-errors li {
+        list-style-type: none;
+        font-size: 14px;
+    }
+
+.error-summary-centered{
+    text-align: center;
+}
+
+.error-summary-centered .validation-summary-errors li {
+        list-style-type: none;
+        font-size: 14px;
+    }
+
+#login-table {
+    margin-left: 20px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    border-style: none;
+}
+
+    #login-table tr {
+        height: 40px;
+    }
+
+        #login-table tr td {
+            vertical-align: middle;
+        }
+
+        #login-table tr:not(:nth-child(3)) td:first-child {
+            padding-right: 50px;
+            vertical-align: middle;
+        }
+
+        #login-table tr td:nth-child(2) {
+            vertical-align: middle;
+        }
+
+        #login-table tr td:nth-child(3) {
+            padding-left: 10px;
+            font-size: 15px;
+            color: red;
+        }
+
+        #login-table tr:nth-child(3) td {
+            text-align: right;
+            padding: 10px;
+        }
+
+    #login-table input {
+        border: 1px solid gray;
+        width: 250px;
+        height: 20px;
+        padding: 5px;
+    }
+
+        #login-table input[type=checkbox] {
+            width: 40px;
+        }
+
+    #login-table textarea {
+        width: 250px;
+        border: 1px solid gray;
+        padding: 5px;
+        margin-top: 5px;
+    }
+
+    #login-table .login-validation-message {
+        margin-bottom: 7px;
+        color: red !important;
+        font-size: 14px;
+    }
+
+    #login-table .text-danger {
+        text-decoration: none;
+    }
+
+#login-header {
+}
+
+    #login-header div {
+        line-height: 40px;
+        padding-right: 15px;
+        color: #39312e;
+        font-size: 10pt;
+        float: right;
+    }
+
+
+#FacebookLoginButton {
+    background-image: url(Images/fb-login.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 200px;
+    height: 40px;
+    border: 0px;
+    background-color: white;
+    cursor: pointer;
+    outline: 0;
+}
+
+#GoogleLoginButton {
+    background-image: url(Images/google-login.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 200px;
+    height: 40px;
+    border: 0px;
+    background-color: white;
+    cursor: pointer;
+    outline: 0;
+}
+
+#password-table {
+    margin-left: 20px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border-style: none;
+}
+
+    #password-table tr {
+        height: 40px;
+    }
+
+        #password-table tr td {
+            vertical-align: middle;
+        }
+
+        #password-table tr:not(:nth-child(3)) td:first-child {
+            padding-right: 50px;
+            vertical-align: middle;
+        }
+
+        #password-table tr td:nth-child(2) {
+            vertical-align: middle;
+        }
+
+        #password-table tr td:nth-child(3) {
+            padding-left: 10px;
+            font-size: 15px;
+            color: red;
+        }
+
+    #password-table input {
+        border: 1px solid gray;
+        width: 250px;
+        height: 20px;
+        padding: 5px;
+    }
+
+        #password-table input[type=checkbox] {
+            width: 40px;
+        }
+
+    #password-table textarea {
+        width: 250px;
+        border: 1px solid gray;
+        padding: 5px;
+        margin-top: 5px;
+    }
+
+    #password-table .login-validation-message {
+        margin-bottom: 7px;
+        color: red !important;
+        font-size: 14px;
+    }
+
+    #password-table .text-danger {
+        text-decoration: none;
+    }
+
+.manage-error {
+    color: red;
+    margin-top: 25px;
+    text-align: center;
+}
+
+    .manage-error .validation-summary-errors li {
+        list-style-type: none;
+        font-size: 14px;
+    }
+
+.manage-message {
+    color: darkgreen;
+    margin-top: 25px;
+    text-align: center;
+}
+
+.content-section .validation-summary-errors {
+    color: red;
+    margin-left: 30px;
+    margin-bottom: 40px;
+    margin-top: 40px;
+}
+
+footer {
+    width: 100%;
+    height: 42px;
+    background-color: #585858;
+    margin-top: 75px;
+    /*overflow: hidden;*/
+}
+
+    footer nav {
+        display: table;
+        overflow: hidden;
+        height: 100%;
+        float: left;
+    }
+
+        footer nav ul {
+            display: table-cell;
+            vertical-align: middle;
+        }
+
+            footer nav ul li {
+                font-size: 14px;
+                color: white;
+                float: left;
+                margin-left: 55px;
+            }
+
+                footer nav ul li a, footer nav ul li a:hover, footer nav ul li a:visited, footer nav ul li a:active, footer nav ul li a:link {
+                    color: white;
+                }
+
+                    footer nav ul li a:hover {
+                        text-decoration: underline;
+                        color: white;
+                    }
+
+                    footer nav ul li a:visited {
+                        color: white;
+                    }
+
+    footer #footer-cd-logo {
+        float: right;
+        margin-top: 8px;
+    }
+
+    footer #footer-copyright {
+        width: 215px;
+        float: right;
+        background-color: #39312E;
+        line-height: 42px;
+        height: 100%;
+        font-size: 14px;
+        color: white;
+        padding-left: 15px;
+    }
+
+.submitLink {
+    background-color: transparent;
+    border: none !important;
+    color: black;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: right;
+}
+
+/*nav ul li {
+        margin: auto;
+        float: left;
+        width: 282px;
+        padding-left: 50px;
+        height: 54px;
+        text-align: left;
+        border-right: 1px solid #E5E5E5;
+        border-bottom: 1px solid #E5E5E5;
+        line-height: 54px;
+    }
+
+        nav ul li a {
+            width: 100%;
+            height: 100%;
+        }
+
+            nav ul li a img {
+                vertical-align: middle; 
+                margin-right: 30px;
+            }*/
+
