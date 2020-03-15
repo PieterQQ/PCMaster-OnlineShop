@@ -117,6 +117,56 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Covers\1.jpg" />
+    <Content Include="Content\Covers\2.png" />
+    <Content Include="Content\Covers\3.png" />
+    <Content Include="Content\Covers\4.png" />
+    <Content Include="Content\Covers\5.png" />
+    <Content Include="Content\Covers\6.png" />
+    <Content Include="Content\Covers\7.png" />
+    <Content Include="Content\Covers\8.png" />
+    <Content Include="Content\Covers\9.png" />
+    <Content Include="Content\Genre-icons\slice_14.png" />
+    <Content Include="Content\Genre-icons\slice_16.png" />
+    <Content Include="Content\Genre-icons\slice_19.png" />
+    <Content Include="Content\Genre-icons\slice_20.png" />
+    <Content Include="Content\Genre-icons\slice_21.png" />
+    <Content Include="Content\Genre-icons\slice_22.png" />
+    <Content Include="Content\Genre-icons\slice_23.png" />
+    <Content Include="Content\Genre-icons\slice_24.png" />
+    <Content Include="Content\Genre-icons\slice_25.png" />
+    <Content Include="Content\Genre-icons\slice_26.png" />
+    <Content Include="Content\Genre-icons\slice_27.png" />
+    <Content Include="Content\Genre-icons\slice_28.png" />
+    <Content Include="Content\Genre-icons\slice_29.png" />
+    <Content Include="Content\Genre-icons\slice_31.png" />
+    <Content Include="Content\Images\slice2_03.jpg" />
+    <Content Include="Content\Images\slice2_05.jpg" />
+    <Content Include="Content\Images\slice2_06.jpg" />
+    <Content Include="Content\Images\slice2_07.jpg" />
+    <Content Include="Content\Images\slice2_08.jpg" />
+    <Content Include="Content\Images\slice3_11.jpg" />
+    <Content Include="Content\Images\slice3_13.jpg" />
+    <Content Include="Content\Images\slice4_03.jpg" />
+    <Content Include="Content\Images\slice4_05.jpg" />
+    <Content Include="Content\Images\slice4_06.jpg" />
+    <Content Include="Content\Images\slice4_07.jpg" />
+    <Content Include="Content\Images\slice4_09.jpg" />
+    <Content Include="Content\Images\slice4_10.jpg" />
+    <Content Include="Content\Images\slice4_12.jpg" />
+    <Content Include="Content\Images\slice4_13.jpg" />
+    <Content Include="Content\Images\slice4_14.jpg" />
+    <Content Include="Content\Images\slice4_15.jpg" />
+    <Content Include="Content\Images\slice5_03.png" />
+    <Content Include="Content\Images\slice5_06.png" />
+    <Content Include="Content\Images\slice5_10.png" />
+    <Content Include="Content\Images\slice6_03.jpg" />
+    <Content Include="Content\Images\slice6_06.jpg" />
+    <Content Include="Content\Images\slice6_08.jpg" />
+    <Content Include="Content\Images\slice6_09.jpg" />
+    <Content Include="Content\Images\slice_03.png" />
+    <Content Include="Content\Images\slice_05.png" />
+    <Content Include="Content\Images\slice_10.png" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
   </ItemGroup>
