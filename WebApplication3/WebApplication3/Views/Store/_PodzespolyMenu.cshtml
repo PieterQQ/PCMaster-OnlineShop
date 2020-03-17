@@ -1,0 +1,16 @@
+﻿@model IEnumerable<WebApplication3.Models.podzespoly>
+<nav class="genres-vertical">
+    <ul>
+        @foreach (var podzespoly in Model )
+        {
+
+        
+        <li>
+
+            <a href="@Url.Action("List","Store",new { genrename=podzespoly.Name.ToString()})"  style="background-image: url(../../Content/ikony/@podzespoly.IconFileName); ">
+                @podzespoly.Name
+            </a>
+        </li>
+        }
+    </ul>
+</nav>

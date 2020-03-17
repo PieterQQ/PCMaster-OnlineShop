@@ -1,0 +1,28 @@
+﻿@model IEnumerable<WebApplication3.Models.Podzespol>
+
+    <div id="productlist-section">
+        <ul class="ThreeColumnsCoversList small-cover-list">
+
+            @foreach (var podzespol in Model)
+            {
+                <li>
+                    <article>
+                        <a class="addtocartlink" href="@Url.Action("AddToCart","Cart",new  { id = podzespol.PodzespolId})">
+                            <img src="../Content/Images/cart.png" alt="Dodaj do koszyka" />
+                        </a>
+                        @if (podzespol.IsBestseller)
+                        {
+                            <div class="bestsellerFlag"></div>
+                        }
+
+                        <a class="productdetailslink" href="@Url.Action("Details","Store", new {id = podzespol.PodzespolId })">
+                            <img class="album-cover" src="../Content/Covers/@podzespol.ConvertFileName" />
+                            <h1>
+                                @podzespol.NazwaPodzespolu-@podzespol.Producent
+                            </h1>
+                        </a>
+                    </article>
+                </li> }
+        </ul>
+
+    </div>

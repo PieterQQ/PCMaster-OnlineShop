@@ -1,0 +1,112 @@
+﻿@model WebApplication3.ViewModels.CartViewModel
+@using WebApplication3.Infrastructure
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_StoreLayout.cshtml";
+}
+
+<div id="productlist-content">
+    @Html.Action("PodzespolyMenu","Store")
+    <div id="productlist-rightsection">
+        <div id="breadcrumb-section">
+            <img src="../Content/Images/home-small.png" />
+            <a href="nav">
+               @Html.MvcSiteMap().SiteMapPath()
+            </a>
+        </div>
+
+        <section class="content-section">
+            <div class="section-header" style="margin-bottom: 0px;">
+                <h1>Twój koszyk</h1>
+            </div>
+
+            <table id="cart-table">
+                @foreach (var cartItem in Model.CartItems)
+                {
+
+                <tr id="cart-row-@cartItem.Podzespol.PodzespolId">
+                    <td>
+                        <a href="@Url.Action("Details","Store",new { id=cartItem.Podzespol.PodzespolId})">
+                        <img src="../Content/Covers/@cartItem.Podzespol.ConvertFileName" /></a>
+                    </td>
+                    <td><a href="@Url.Action("Details", "Store", new { id = cartItem.Podzespol.PodzespolId })">@cartItem.Podzespol.NazwaPodzespolu</a></td>
+                    <td>Ilość: <span id="cart-item-count-@cartItem.Podzespol.PodzespolId">@cartItem.Quantity</span></td>
+                    <td>@String.Format("{0:0.##}", cartItem.TotalPrice) zł</td>
+                    <td><a class="removeProduct" data-id="@cartItem.Podzespol.PodzespolId" href="#">Usuń</a></td>
+                </tr>
+
+                }
+                <tr id="cart-empty-message" @if (Model.CartItems != null && Model.CartItems.Count > 0) { <text> class="hidden" </text>    }>
+                    <td>Twój koszyk jest pusty. Może warto coś do niego dodać?</td>
+                </tr>
+            </table>
+            
+            <div id="total-price" style="">
+                Razem: <span id="total-price-value">@String.Format("{0:0.##}",Model.TotalPrice)</span> zł
+            </div>
+
+            <div class="section-button-container">
+                <a class="button-link" href="">Kontynuuj zakupy</a>
+                @if (Model.TotalPrice > 0)
+                {
+                    <a class="button-link" id="cart-button-checkout" href="@Url.Action("Checkout","Cart")">Zapłać</a>
+                }
+               
+            </div>
+
+        </section>
+
+    </div>
+</div>
+
+@section ScriptsBottom{
+<script src="~/Scripts/jquery-3.4.1.js"></script>
+<script src="~/Scripts/jquery-ui-1.12.1.js"></script>
+@System.Web.Optimization.Scripts.Render("~/bundles/jquery")
+<script type="text/javascript">
+   
+  
+    $(function () {
+        $(".removeProduct").click(function () {
+
+            var recordToDelete = $(this).attr("data-id");
+
+            if (recordToDelete != '') {
+
+                // Send post request with AJAX
+                $.post("/Cart/RemoveFromCart", { "PodzespolId": recordToDelete },
+                    function (response) {
+                        // Success
+                        if (response.RemovedItemCount == 0) {
+
+                            $('#cart-row-' + response.RemoveItemId).fadeOut('slow', function () {
+                                if (response.CartItemsCount == 0) {
+                                    $("#cart-empty-message").removeClass("hidden");
+                                }
+                            });
+                        } else {
+                            $('#cart-item-count-' + response.RemoveItemId).text(response.RemovedItemCount);
+                        }
+
+                        if (response.CartItemsCount == 0) {
+                            $('#cart-button-checkout').addClass('hidden');
+                            $('#total-price').addClass('invisible');
+                        }
+
+                        $('#total-price-value').text(response.CartTotal);
+                        $('#cart-header-items-count').text(response.CartItemsCount);
+
+                    });
+
+                return false;
+            }
+        });
+
+    });
+
+</script>
+
+    }
+
+
+

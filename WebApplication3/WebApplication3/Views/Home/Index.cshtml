@@ -1,0 +1,88 @@
+﻿
+@model WebApplication3.ViewModels.HomeViewModel
+
+@{
+    ViewBag.Title = "Moj sklep";
+    Layout = "~/Views/Shared/_StoreLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width" />
+</head>
+<body>
+   
+    <nav class="genres-horizontal">
+        <ul>
+            @foreach (var podzespol in Model.Podzespoly)
+            {
+            <li>
+                <a href="@Url.Action("List","Store", new { genrename=podzespol.Name.ToLower() })"  style="background-image: url('../../Content/ikony/@podzespol.IconFileName');">
+                    @podzespol.Name
+                </a>
+            </li>
+            }
+          
+        </ul>
+        <a href="">
+            <img id="baner-main" src="../../Content/ikony/slider.png"/>
+        </a>
+    </nav>
+
+    <section>
+        <ul class="ThreeColumnsCoversList large-cover-list">
+            @foreach (var newArrival in Model.NewArrivals)
+            {
+
+            
+            <li>
+                <article>
+                    <a class="addtocartlink" href="@Url.Action("AddToCart","Cart",new { id=newArrival.PodzespolId })">
+                        <img src="../Content/Images/cart.png" />
+                    </a>
+                    <a class="productdetailslink" href="@Url.Action("Details","Store",new { id=newArrival.PodzespolId })">
+                        <div class="newFlag"></div>
+                        <img class="album-cover" src="../Content/Covers/@newArrival.ConvertFileName" />
+                        <h1>
+                            <b /> @newArrival.NazwaPodzespolu - @newArrival.Producent
+                        </h1>
+                    </a>
+                </article>
+            </li>
+            }
+        </ul>
+    </section>
+
+    <section>
+        <ul class="ThreeColumnsCoversList large-cover-list">
+            @foreach (var bestseller in Model.Bestsellers)
+            {
+
+
+            <li>
+                <article>
+                    <a class="addtocartlink" href="@Url.Action("AddToCart","Cart",new { id=bestseller.PodzespolId })">
+                        <img src="../Content/Images/cart.png" />
+                    </a>
+                    <a class="productdetailslink" href=""@Url.Action("Details","Store",new { id= bestseller.PodzespolId })"">
+                        <div class="bestsellerFlag"></div>
+                        <img class="album-cover" src="../Content/Covers/@bestseller.ConvertFileName" />
+                        <h1>
+                            <b />    @bestseller.NazwaPodzespolu - @bestseller.Producent
+                        </h1>
+                    </a>
+                </article>
+            </li>
+            }
+        </ul>
+    </section>
+
+   
+
+</body>
+</html>
+

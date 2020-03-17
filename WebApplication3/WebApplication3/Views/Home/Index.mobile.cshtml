@@ -1,0 +1,68 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>IndexMobile</title>
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+    @Html.Partial("_ViewSwitcher")
+    <h3 class="ui-bar ui-bar-a">Witaj w sklepie Przemka</h3>
+    <div class="ui-body">
+        <ul data-role="listview" data-inset="true" data-dividertheme="a">
+            <li data-role="list-divider">Nowości</li>
+
+          @foreach (var newArrival in Model.NewArrivals)
+            {
+                <li>
+                    <a href="@Url.Action("Details","Store",new { id=newArrival.PodzespolId })" data-ajax="false">
+                        <img src="../Content/Covers/@newArrival.ConvertFileName">
+                        <h2>@newArrival.NazwaPodzespolu </h2>
+                        <p>@newArrival.Producent</p>
+                    </a>
+                </li>
+            }
+            </ul>
+    </div>
+    <div class="ui-body">
+        <ul data-role="listview" data-inset="true" data-dividertheme="a">
+            <li data-role="list-divider">Nowości</li>
+
+            @foreach (var bestseller in Model.Bestsellers)
+            {
+                <li>
+                    <a href="@Url.Action("Details","Store",new { id=bestseller.PodzespolId })" data-ajax="false">
+                        <img src="../Content/Covers/@bestseller.ConvertFileName">
+                        <h2>@bestseller.NazwaPodzespolu </h2>
+                        <p>@bestseller.Producent</p>
+                    </a>
+                </li>
+            }
+        </ul>
+        <ul data-role="listview" data-inset="true" data-filter-placeholder="Szukaj podzespolu" data-filter="true">
+            @foreach (var podzespol in Model.Podzespoly)
+            {
+                <li>
+                    <a href="@Url.Action("List","Store", new { genrename=podzespol.Name.ToLower() })" data-ajax="false">@podzespol.Name</a>
+                </li>
+            }
+</div>
+    <div data-role="footer"
+    <div data-role="navbar">
+        <ul>
+            <li><a href="@Url.Action("StaticContent","Home", new { viewname = "onas" })" data-ajax="false"data-icon="video">O nas</a></li>
+            <li><a href="@Url.Action("StaticContent","Home", new { viewname = "kontakty" })"data-ajax="false"data-icon="User">Kontakty</a></li>
+            <li><a href="@Url.Action("StaticContent","Home", new { viewname = "wysylka" })"data-ajax="false"data-icon="mail">wysylka</a></li>
+        </ul>
+    </div><!-- /navbar -->
+    </div>
+</body>
+</html>

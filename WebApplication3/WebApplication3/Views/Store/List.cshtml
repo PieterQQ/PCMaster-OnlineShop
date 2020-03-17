@@ -1,0 +1,71 @@
+﻿
+@{
+    ViewBag.Title = "List";
+    Layout = "~/Views/Shared/_StoreLayout.cshtml";
+}
+
+
+<div id="productlist-content">
+    @Html.Action("PodzespolyMenu")
+    <div id="productlist-rightsection">
+    </div>
+    <div id="breadcrumb-section">
+        <form id="search-form" method="get" data-ajax="true" data-ajax-target="#productlist-section">
+            <input id="search-filter" type="search" name="searchQuery" data-autocomplete-source="@Url.Action("PodzespolSuggestions")" placeholder="Wprowadź tekst, aby wyfiltrować..." />
+            <input type="submit" value="" />
+        </form>
+        <img src="@Url.Content("~/Content/Images/home-small.png" )" />
+        <b>@Html.MvcSiteMap().SiteMapPath()</b>
+
+
+        </div>
+        @Html.Partial("_ProductList")
+    </div>
+    @section ScriptsBottom{
+        @System.Web.Optimization.Scripts.Render("~/bundles/jquery")
+        <script src="~/Scripts/jquery-ui-1.12.1.js"></script>
+        <script>
+            $(function () {
+
+                var ajaxSubmit = function () {
+
+                    var $form = $(this);
+
+                    var settings = {
+                        data: $(this).serialize(),
+                        url: $(this).attr("action"),
+                        type: $(this).attr("method")
+                    };
+
+                    $.ajax(settings).done(function (result) {
+                        var $targetElement = $($form.data("ajax-target"));
+                        var $newContent = $(result);
+                        $($targetElement).replaceWith($newContent);
+                        $newContent.effect("slide");
+                    });
+
+                    return false;
+                };
+                var setupAutoComplete = function () {
+                    var $input = $(this);
+                    
+                    var options = {
+                        source: $input.attr("data-autocomplete-source"),
+                        select: function (event, ui) {
+                            $input = $(this);
+                            $input.val(ui.item.label);
+                            var $form = $input.parents("form:first");
+                            $form.submit();
+                        }
+                    };
+
+                    $input.autocomplete(options);
+                };
+
+               
+                $("#search-filter").each(setupAutoComplete);
+                $("#search-form").submit(ajaxSubmit);
+            });
+
+        </script>
+    }
