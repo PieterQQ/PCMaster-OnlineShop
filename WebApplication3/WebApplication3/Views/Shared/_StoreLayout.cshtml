@@ -18,6 +18,7 @@
             </a>
             <a id="cart-header-link" href="@Url.Action("Index","Cart")">
                 KOSZYK (<span id="cart-header-items-count">@Html.Action("GetCartItemsCount", "Cart")</span>)
+                <span id="cart-header-logo"></span>
                 <span></span>
             </a>
             @Html.Partial("_PartialView")

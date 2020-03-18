@@ -1,0 +1,112 @@
+﻿@model WebApplication3.Models.EditProductViewModel
+@{
+    ViewBag.Title = "AddProduct";
+    Layout = "~/Views/Shared/_ManageLayout.cshtml";
+}
+
+<hr />
+
+<h2 class="manageHeader">Edycja produktu</h2>
+
+<div>
+    @if (Model.ConfirmSuccess.HasValue && Model.ConfirmSuccess.Value)
+    {
+        <div style="text-align: center; margin: 50px;">
+            Pomyślnie wprowadzono zmiany!
+        </div>
+    }
+
+    @using (@Html.BeginForm("AddProduct", "Manage", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="error-summary-centered">
+            @Html.ValidationSummary()
+        </div>
+
+        @Html.HiddenFor(o => o.Podzespol.PodzespolId)
+        @Html.HiddenFor(o => o.Podzespol.DateAdded)
+        @Html.HiddenFor(o => o.Podzespol.ConvertFileName)
+
+        <div style="text-align: center;">
+            <table id="albumedit-address-table">
+                <tr>
+                    <td>@Html.LabelFor(o => o.Podzespol.NazwaPodzespolu, "Nazwa:")</td>
+                    <td>@Html.TextBoxFor(o => o.Podzespol.NazwaPodzespolu)</td>
+                    <td>@Html.ValidationMessageFor(o => o.Podzespol.NazwaPodzespolu)</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(o => o.Podzespol.Producent, "Producent:")</td>
+                    <td>@Html.TextBoxFor(o => o.Podzespol.Producent)</td>
+                    <td>@Html.ValidationMessageFor(o => o.Podzespol.Producent)</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(o => o.Podzespol.Description, "Opis:")</td>
+                    <td>@Html.TextBoxFor(o => o.Podzespol.Description)</td>
+                    <td>@Html.ValidationMessageFor(o => o.Podzespol.Description)</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(o => o.podzespoly, "Gatunek:")</td>
+                    <td>@Html.DropDownListFor(m => m.Podzespol.PodzespolyId, new SelectList(Model.podzespoly, "PodzespolyId", "Name", Model.podzespoly.First().PodzespolyId))</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(o => o.Podzespol.Price, "Cena:")</td>
+                    <td>@Html.TextBoxFor(o => o.Podzespol.Price)</td>
+                    <td>@Html.ValidationMessageFor(o => o.Podzespol.Price)</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(o => o.Podzespol.IsBestseller, "Bestseller:")</td>
+                    <td>@Html.CheckBoxFor(o => o.Podzespol.IsBestseller)</td>
+                    <td></td>
+                </tr>
+
+                @if (ViewBag.EditMode == null || !ViewBag.EditMode)
+                {
+                    <tr>
+                        <td colspan="3">
+
+                            <div class="upload">
+                                <input type="file" name="file" />
+                            </div>
+
+                        </td>
+                    </tr>
+                }
+
+                <tr>
+                    <td style="text-align: left">
+                        @if (ViewBag.EditMode)
+                        {
+                            if (Model.Podzespol.IsHidden)
+                            {
+                                @* A bit dangerous - CSRF. Nested form.. Need to use form attr or JS *@
+                                <a href="@Url.Action("UnhideProduct", "Manage", new { PodzespolId = Model.Podzespol.PodzespolId })" style="display: block; margin-top: 15px; font-weight: bold;">
+                                    Przywróć
+                                </a>
+                            }
+                            else
+                            {
+                                @* A bit dangerous - CSRF. Nested form.. Need to use form attr or JS *@
+                                <a href="@Url.Action("HideProduct", "Manage", new { PodzespolId = Model.Podzespol.PodzespolId })" style="display: block; margin-top: 15px; font-weight: bold;">
+                                    Usuń
+                                </a>
+                            }
+                        }
+                    </td>
+
+                    <td style="text-align: right;">
+
+                        <input type="submit" value="Zapisz" class="submitLink" style="height: 40px; margin-right: 0px; margin-top: 30px; font-weight: bold;" />
+
+                    </td>
+                    <td></td>
+
+                </tr>
+            </table>
+        </div>
+    }
+
+</div>
+
+

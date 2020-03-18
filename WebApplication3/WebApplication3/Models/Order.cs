@@ -9,6 +9,9 @@ namespace WebApplication3.Models
     public class Order
     {
         public int OrderId { get; set; }
+
+        public string ApplicationUser_Id { get; set; }
+        public virtual ApplicationUser User { get; set; }
         [StringLength(150)]
         public string FirstName { get; set; }
         [StringLength(150)]

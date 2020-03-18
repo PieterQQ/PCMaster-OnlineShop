@@ -7,6 +7,8 @@ using Owin;
 using WebApplication3.Dal;
 using WebApplication3.Models;
 using System;
+using Microsoft.Owin.Security.Facebook;
+
 namespace WebApplication3
 {
     public partial class Startup
@@ -55,20 +57,19 @@ namespace WebApplication3
             //   consumerKey: "",
             //   consumerSecret: "");
 
-            //    var options = new FacebookAuthenticationOptions()
-            //    {
-            //        AppId = "335213909995838",
-            //        AppSecret = "80049ab5e1f27242c29fb2363c064517"
-            //    };
-            //    options.Scope.Add("email");
+            var options = new FacebookAuthenticationOptions()
+            {
+                AppId = "218403726233614",
+                AppSecret = "81927f9e0a9e3febc9a8d9dfc33daa2b"
+            };
+            options.Scope.Add("email");
 
-            //    app.UseFacebookAuthentication(options);
+            app.UseFacebookAuthentication(options);
 
-            //    app.UseGoogleAuthentication(
-            //        clientId: "423286183817-v47kefqspm9fme0uhrqq90k5lvrd82ib.apps.googleusercontent.com",
-            //        clientSecret: "UD5BxMUz_KrNV-lvFZHnnwCp");
-            //}
-
+            app.UseGoogleAuthentication(
+                clientId: "966000343605-2tgj37sdj4h87j3q24d218e5418cg348.apps.googleusercontent.com",
+                clientSecret: "snc2QUAgoiN8s3u0cpkLFXv3");
         }
+
     }
-}
+    }

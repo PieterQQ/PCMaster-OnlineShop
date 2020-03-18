@@ -1,0 +1,271 @@
+﻿@model WebApplication3.Models.ManageCredentialsViewModel
+ @{
+     ViewBag.Title = "Index";
+     Layout = "~/Views/Shared/_ManageLayout.cshtml";
+}
+
+<hr />
+
+
+    <h2 style="margin-bottom: 30px">Twoje dane</h2>
+
+
+    @using (@Html.BeginForm("ChangeProfile", "Manage"))
+    {
+        @Html.AntiForgeryToken()
+        
+        <div style="text-align: center;">
+            <table id="userdata-address-table">
+                <tr>
+                    <td>@Html.LabelFor(o => o.UserData.FirstName, "Imię:")</td>
+                    <td>@Html.TextBoxFor(o => o.UserData.FirstName)</td>
+                    <td>@Html.ValidationMessageFor(o => o.UserData.FirstName)</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(o => o.UserData.LastName, "Nazwisko")</td>
+                    <td>@Html.TextBoxFor(o => o.UserData.LastName)</td>
+                    <td>@Html.ValidationMessageFor(o => o.UserData.LastName)</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(o => o.UserData.Address, "Adres")</td>
+                    <td>@Html.TextBoxFor(o => o.UserData.Address)</td>
+                    <td>@Html.ValidationMessageFor(o => o.UserData.Address)</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(o => o.UserData.CodeAndCity, "Kod i miasto")</td>
+                    <td>@Html.TextBoxFor(o => o.UserData.CodeAndCity)</td>
+                    <td>@Html.ValidationMessageFor(o => o.UserData.CodeAndCity)</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(o => o.UserData.PhoneNumber, "Numer telefonu")</td>
+                    <td>@Html.TextBoxFor(o => o.UserData.PhoneNumber)</td>
+                    <td>@Html.ValidationMessageFor(o => o.UserData.PhoneNumber)</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(o => o.UserData.Email, "Adres e-mail")</td>
+                    <td>@Html.TextBoxFor(o => o.UserData.Email)</td>
+                    <td>@Html.ValidationMessageFor(o => o.UserData.Email)</td>
+                </tr>
+                <tr style="text-align: right;">
+                    <td></td>
+                    <td colspan="3">
+                        <div class="checkbox" style="margin-bottom: 10px;">
+                        </div>
+
+                        <input type="submit" value="Potwierdź" class="submitLink" style="height: 40px; margin-right: 5px;" />
+                    </td>
+                </tr>
+            </table>
+        </div>   
+    }
+
+
+<hr />
+
+@if (Model.HasPassword)
+{
+    <h2 style="margin-bottom: 30px">Zmiana hasła</h2>
+
+    using (Html.BeginForm("ChangePassword", "Manage", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="manage-error">
+            @Html.ValidationMessage("password-error", "")
+        </div>
+
+        if (Model.Message.HasValue)
+        {
+            <div class="manage-message">
+                @switch (Model.Message)
+                {
+                    case WebApplication3.Controllers.ManageController.ManageMessageId.ChangePasswordSuccess:
+                        @: Hasło zmienione pomyślnie!
+                    break;
+                    case WebApplication3.Controllers.ManageController.ManageMessageId.SetPasswordSuccess:
+                    @: Hasło dodane pomyślnie!
+                        break;
+                    case WebApplication3.Controllers.ManageController.ManageMessageId.LinkSuccess:
+                        @: Udało się połączyć konta!
+                    break;
+                    case WebApplication3.Controllers.ManageController.ManageMessageId.Error:
+                        @: Wystąpił błąd
+                    break;
+                    case WebApplication3.Controllers.ManageController.ManageMessageId.RemoveLoginSuccess:
+                        @: Udało się usunąć powiązanie kont
+                    break;
+                }
+            </div>
+        }
+
+        <table id="password-table" style="margin-left: auto; margin-right: auto;">
+            <tr>
+                <td>@Html.LabelFor(o => o.ChangePasswordViewModel.OldPassword, "Stare hasło:")</td>
+                <td>
+                    @Html.PasswordFor(o => o.ChangePasswordViewModel.OldPassword)
+                    <div class="login-validation-message">
+                        @Html.ValidationMessageFor(o => o.ChangePasswordViewModel.OldPassword)
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(o => o.ChangePasswordViewModel.NewPassword, "Nowe hasło:")</td>
+                <td>
+                    @Html.PasswordFor(o => o.ChangePasswordViewModel.NewPassword)
+                    <div class="login-validation-message">
+                        @Html.ValidationMessageFor(o => o.ChangePasswordViewModel.NewPassword)
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(o => o.ChangePasswordViewModel.ConfirmPassword, "Potwierdź hasło:")</td>
+                <td>
+                    @Html.PasswordFor(o => o.ChangePasswordViewModel.ConfirmPassword)
+                    <div class="login-validation-message">
+                        @Html.ValidationMessageFor(o => o.ChangePasswordViewModel.ConfirmPassword)
+                    </div>
+                </td>
+            </tr>
+            <tr style="text-align: right;">
+                <td></td>
+                <td colspan="3">
+                    <div class="checkbox" style="margin-bottom: 10px;">
+                    </div>
+
+                    <input type="submit" value="Zmień" class="submitLink" style="height: 40px;" />
+                </td>
+            </tr>
+        </table>
+    }
+}
+else
+{
+    <h2 style="margin-bottom: 30px">Ustaw hasło lokalne</h2>
+
+    using (Html.BeginForm("SetPassword", "Manage", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="manage-error">
+            @Html.ValidationMessage("password-error", "")
+        </div>
+
+        if (Model.Message.HasValue)
+        {
+            <div class="manage-message">
+                @switch (Model.Message)
+                {
+                    case WebApplication3.Controllers.ManageController.ManageMessageId.SetPasswordSuccess:
+                        @: Hasło dodane pomyślnie!
+                        break;
+                    case WebApplication3.Controllers.ManageController.ManageMessageId.LinkSuccess:
+                    @: Udało się połączyć konta!
+                        break;
+                    case WebApplication3.Controllers.ManageController.ManageMessageId.Error:
+                    @: Wystąpił błąd
+                        break;
+                    case WebApplication3.Controllers.ManageController.ManageMessageId.RemoveLoginSuccess:
+                    @: Udało się usunąć powiązanie kont
+                        break;
+                }
+            </div>
+        }
+
+        <table id="password-table" style="margin-left: auto; margin-right: auto;">
+            <tr>
+                <td>@Html.LabelFor(o => o.SetPasswordViewModel.NewPassword, "Nowe hasło:")</td>
+                <td>
+                    @Html.PasswordFor(o => o.SetPasswordViewModel.NewPassword)
+                    <div class="login-validation-message">
+                        @Html.ValidationMessageFor(o => o.SetPasswordViewModel.NewPassword)
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(o => o.SetPasswordViewModel.ConfirmPassword, "Potwierdź hasło:")</td>
+                <td>
+                    @Html.PasswordFor(o => o.SetPasswordViewModel.ConfirmPassword)
+                    <div class="login-validation-message">
+                        @Html.ValidationMessageFor(o => o.SetPasswordViewModel.ConfirmPassword)
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <div class="checkbox" style="margin-bottom: 10px;">
+                    </div>
+
+                    <input type="submit" value="Zmień" class="submitLink" style=" height: 40px;" />
+                </td>
+            </tr>
+        </table>
+    }
+}
+
+
+@if (Model.CurrentLogins.Count > 0)
+{
+    <hr />
+    
+    <h4 style="margin-bottom: 30px">Połączone konta</h4>
+    <table style="margin-left: auto; margin-right: auto; margin-bottom: 50px">
+        <tbody>
+            @foreach (var account in Model.CurrentLogins)
+            {
+                <tr style="height: 35px;">
+                    <td>@account.LoginProvider</td>
+                    <td>
+                        @if (Model.ShowRemoveButton)
+                        {
+                            using (Html.BeginForm("RemoveLogin", "Manage"))
+                            {
+                                @Html.AntiForgeryToken()
+                                <div>
+                                    @Html.Hidden("loginProvider", account.LoginProvider)
+                                    @Html.Hidden("providerKey", account.ProviderKey)
+                                    &nbsp;
+                                    (<input type="submit" class="submitLink" style="padding: 0px; margin-top: -5px;" value="usuń" title="Remove this @account.LoginProvider login from your account" />)
+                                </div>
+                            }
+                        }
+                        else
+                        {
+                            @: &nbsp;
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+
+@if (Model.OtherLogins.Count > 0)
+{
+    <hr />
+    
+    <h4>Dodaj logowanie przy pomocy innego serwisu</h4>
+
+    using (Html.BeginForm("LinkLogin", "Manage"))
+    {
+        @Html.AntiForgeryToken()
+        <div id="socialLoginList">
+            <p style="text-align: center;">
+                <br />
+                @foreach (Microsoft.Owin.Security.AuthenticationDescription p in Model.OtherLogins)
+                {
+                    <button type="submit" class="submitLink" style="height: 50px;" id="@p.AuthenticationType" name="provider" value="@p.AuthenticationType" title="log in using your @p.Caption account">@string.Format("Dodaj logowanie przy pomocy usługi {0}", @p.AuthenticationType)</button>
+                    <br />
+                }
+            </p>
+        </div>
+    }
+}
+
+
+@section ScriptsBottom
+{
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+}

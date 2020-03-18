@@ -1,0 +1,130 @@
+﻿@model IEnumerable<WebApplication3.Models.Order>
+@{
+    ViewBag.Title = "OrdersList";
+    Layout = "~/Views/Shared/_ManageLayout.cshtml";
+}
+
+
+<div>
+
+    <hr />
+
+    <h2 class="manageHeader">Twoje zamówienia</h2>
+
+    <div>
+
+        @if (Model.Any())
+        {
+
+            <table id="orders-table">
+
+                @foreach (var order in Model)
+                {
+                    <tr @if (order.OrderState == WebApplication3.Models.OrderState.New) { <text> class="newOrder" </text>     }>
+                        <td>
+                            <strong>Nr zamówienia: </strong>@order.OrderId
+                        </td>
+                        <td>
+                            <strong>Data: </strong>
+                            @order.DateCreated.ToString("dd-MM-yyyy")
+                        </td>
+                        <td>
+                            <strong>Stan: </strong><br />
+
+                            @if (ViewBag.UserIsAdmin)
+                            {
+                                using (Html.BeginForm("ChangeOrderState", "Manage"))
+                                {
+                                    @Html.HiddenFor(o => order.OrderId)
+                                    @Html.EnumDropDownListFor(o => order.OrderState, new { @class = "orderstateddl" })
+                                }
+                            }
+                            else
+                            {
+                                @Html.DisplayFor(o => order.OrderState)
+                            }
+
+                        </td>
+
+                        <td>
+                            <strong>Dane wysyłkowe:</strong><br />
+                            @order.FirstName @order.LastName<br />
+                            @order.Address<br />
+                            @order.CodeAndCity<br />
+                        </td>
+                        <td>
+                            <strong>Uwagi: </strong><br />
+                            @order.Comment
+                        </td>
+                        <td>
+                            <strong>Łączny koszt:</strong> @order.TotalPrize zł
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="6">
+                            <section>
+                                <ul class="ThreeColumnsStaticCoversList large-cover-list-bottom">
+
+                                    @foreach (var orderItem in order.OrderItems)
+                                    {
+                                        <li>
+                                            <article>
+                                                <a class="productdetailslink" href="@Url.Action("Details", "Store", new { id = orderItem.PodzespolId})">
+                                                    <img class="album-cover" src="@Url.Content("~/Content/Covers/" + orderItem.podzespol.ConvertFileName)" />
+                                                    <h1>
+                                                        @orderItem.podzespol.Producent - @orderItem.podzespol.NazwaPodzespolu<br />
+                                                        <strong>sztuk: @orderItem.Quantity, łącznie: @(orderItem.Quantity * @orderItem.UnitPrize)  zł</strong>
+                                                    </h1>
+                                                </a>
+                                            </article>
+                                        </li>
+                                    }
+
+                                </ul>
+
+                            </section>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="6"></td>
+                    </tr>
+
+                <!-- Next order -->
+
+                }
+
+
+            </table>
+        }
+        else
+        {
+            <div style="text-align: center; margin-top: 50px; margin-bottom: 50px;">
+                Brak zamówień.
+            </div>
+        }
+    </div>
+
+
+
+</div>
+
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+<script>
+    $(".orderstateddl").on('change', function (e) {
+        //e.preventDefault();
+
+        var f = $(this.form);
+        var tr = f.closest("tr");
+
+        var action = f.attr("action");
+        var serializedForm = f.serialize();
+        $.post(action, serializedForm).done(function (data) {
+            if (data == '@WebApplication3.Models.OrderState.New.ToString()') {
+                tr.addClass("newOrder")
+            }
+            else {
+                tr.removeClass("newOrder");
+            }        
+          });
+    });
+</script>

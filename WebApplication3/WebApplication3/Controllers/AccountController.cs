@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace WebApplication3.Controllers
 {
-  
+  [RequireHttps]
         
         public class AccountController : Controller
         {
