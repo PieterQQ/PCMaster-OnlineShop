@@ -1,0 +1,80 @@
+﻿@model WebApplication3.ViewModels.LoginViewModel
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_RightSectionLayout.cshtml";
+}
+
+@section SectionTitle
+{
+    Zaloguj się
+}
+
+<div>
+
+    @using (@Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+
+        <div id="login-error">
+            @Html.ValidationMessage("loginerror", "")
+        </div>
+
+        <table id="login-table" style="margin-left: auto; margin-right: auto;">
+            <tr>
+                <td>@Html.LabelFor(o => o.Email, "E-mail:")</td>
+                <td>
+                    @Html.TextBoxFor(o => o.Email)
+                    <div class="login-validation-message">
+                        @Html.ValidationMessageFor(o => o.Email)
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(o => o.Password, "Hasło")</td>
+                <td>
+                    @Html.PasswordFor(o => o.Password)
+                    <div class="login-validation-message">
+                        @Html.ValidationMessageFor(o => o.Password)
+                    </div>
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <div class="checkbox" style="margin-bottom: 10px;">
+                        @Html.CheckBoxFor(m => m.RememberMe, new { @checked = "checked" })
+                        @Html.LabelFor(m => m.RememberMe)
+                    </div>
+
+                    <input type="submit" value="Zaloguj" class="submitLink" style=" height: 40px;" />
+                </td>
+            </tr>
+        </table>
+    }
+
+    <div style="text-align: center;">
+
+        <a href="@Url.Action("Register")">Nie masz jeszcze konta??? Zarejestruj się</a>
+
+        <br /><br />
+
+        @using (Html.BeginForm("ExternalLogin", "Account", new { ReturnUrl = ViewBag.ReturnUrl }))
+        {
+            @Html.AntiForgeryToken()
+
+            <button type="submit" id="FacebookLoginButton" name="provider" value="Facebook" title="Log in using your Facebook account"></button>
+
+            <button type="submit" id="GoogleLoginButton" name="provider" value="Google" title="Log in using your Google account"></button>
+        }
+
+    </div>
+
+</div>
+
+
+@section ScriptsBottom
+{
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+    <script src="~/Scripts/jquery.validate.js"></script>
+   <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+            }
