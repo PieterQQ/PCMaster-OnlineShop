@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity.EntityFramework;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -7,7 +8,7 @@ using WebApplication3.Models;
 
 namespace WebApplication3.Dal
 {
-    public class StoreContext : DbContext
+    public class StoreContext : IdentityDbContext<ApplicationUser>
     {
         static StoreContext()
         {
@@ -19,5 +20,9 @@ namespace WebApplication3.Dal
         public DbSet<Order> Orders { get; set; }
         public DbSet<OrderItem> OrderItems { get; set; }
 
+         public static StoreContext Create()
+        {
+            return new StoreContext();
+        }
     }
 }
