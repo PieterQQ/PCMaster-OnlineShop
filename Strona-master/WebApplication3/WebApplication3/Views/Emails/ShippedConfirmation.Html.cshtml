@@ -1,14 +1,12 @@
-﻿@model WebApplication3.ViewModels.OrderConfirmationEmail
+﻿@model WebApplication3.ViewModels.ShippedConfirmationEmail
 Content-Type: text/html; charset=utf-8
-
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <!-- NAME: 1 COLUMN - BANDED -->
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spodigly</title>
-
+    <title>*|MC:SUBJECT|*</title>
     <style type="text/css">
         body, #bodyTable, #bodyCell {
             height: 100% !important;
@@ -261,7 +259,7 @@ Content-Type: text/html; charset=utf-8
             }
         }
 
-        @@media only screen and (max-width: 480px) {
+       @@media only screen and (max-width: 480px) {
             table[class=mcnImageGroupContentContainer] {
                 width: 100% !important;
             }
@@ -464,25 +462,7 @@ Content-Type: text/html; charset=utf-8
                                             <table border="0" cellpadding="0" cellspacing="0" width="600" class="templateContainer" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
                                                 <tr>
                                                     <td valign="top" class="preheaderContainer" style="padding-top: 9px;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-                                                        <table width="100%" class="mcnImageBlock" border="0" cellspacing="0" cellpadding="0" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-                                                            <tbody class="mcnImageBlockOuter">
-                                                                <tr>
-                                                                    <td class="mcnImageBlockInner" valign="top" style="padding: 9px;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-                                                                        <table width="100%" align="left" class="mcnImageContentContainer" border="0" cellspacing="0" cellpadding="0" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-                                                                            <tbody>
-                                                                                <tr>
-                                                                                    <td class="mcnImageContent" valign="top" style="padding: 0px 9px;text-align: center;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-                                                                                        
-                                                                                        @Html.EmbedImage("~/Content/Images/spodigly-logo-main.png.png", "", new { @width = 182, @align = "center", @class = "mcnImage", @style = "padding-bottom: 0px;vertical-align: bottom;display: inline !important;max-width: 182px;border: 0;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;" })
-
-                                                                                    </td>
-                                                                                </tr>
-                                                                            </tbody>
-                                                                        </table>
-                                                                    </td>
-                                                                </tr>
-                                                            </tbody>
-                                                        </table>
+                                                 
                                                     </td>
                                                 </tr>
                                             </table>
@@ -505,30 +485,20 @@ Content-Type: text/html; charset=utf-8
                                                             <tbody class="mcnTextBlockOuter">
                                                                 <tr>
                                                                     <td class="mcnTextBlockInner" valign="top" style="mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-
                                                                         <table width="600" align="left" class="mcnTextContentContainer" border="0" cellspacing="0" cellpadding="0" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
                                                                             <tbody>
                                                                                 <tr>
-
                                                                                     <td class="mcnTextContent" valign="top" style="padding: 9px 18px;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #606060;font-family: Helvetica;font-size: 15px;line-height: 150%;text-align: left;">
-
-                                                                                        <h1 style="margin: 0;padding: 0;display: block;font-family: Helvetica;font-size: 40px;font-style: normal;font-weight: bold;line-height: 125%;letter-spacing: -1px;text-align: left;color: #606060 !important;">Dziękujemy!</h1>
-
-                                                                                        <h3 style="margin: 0;padding: 0;display: block;font-family: Helvetica;font-size: 18px;font-style: normal;font-weight: bold;line-height: 125%;letter-spacing: -.5px;text-align: left;color: #606060 !important;">Złożyłeś zamówienie w sklepie PCMaster.pl</h3>
-
+                                                                                        <h1 style="margin: 0;padding: 0;display: block;font-family: Helvetica;font-size: 40px;font-style: normal;font-weight: bold;line-height: 125%;letter-spacing: -1px;text-align: left;color: #606060 !important;">W drodze!</h1>
+                                                                                        <h3 style="margin: 0;padding: 0;display: block;font-family: Helvetica;font-size: 18px;font-style: normal;font-weight: bold;line-height: 125%;letter-spacing: -.5px;text-align: left;color: #606060 !important;">Twoje zamówienie ze sklepu PCMaster.pl zostało wysłane</h3>
                                                                                         <p style="margin: 1em 0;padding: 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #606060;font-family: Helvetica;font-size: 15px;line-height: 150%;text-align: left;">
-                                                                                            Postaramy się, aby zamówione&nbsp;podzespoły dotarły do Ciebie w ciągu 24 godzin. Prosimy o przelanie kwoty&nbsp;<strong>@Model.Cost zł, </strong>tytułem:<strong> &quot;zamówienie nr @Model.OrderNumber&quot; </strong>na nasze konto bankowe: PCMaster Sp. z o.o, ul. XYZ 11, 00-222 Warszawa, PKO BP 10 1001 1100 0011 1100 0011. Zaraz po otrzymaniu środków wyślemy przesyłkę kurierską pod adres: @Model.FullAddress.<br>
-                                                                                            <br>
-                                                                                            Poniżej znajdziesz zamówione produkty.<br>
-                                                                                            <br>
-                                                                                            Chcesz zobaczyć&nbsp;szczegóły swojego zamówienia? <a class="mc-template-link" href="@Url.Action("OrdersList", "Manage", null, "https")" style="word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #6DC6DD;font-weight: normal;text-decoration: underline;">Tutaj znajdziesz je wszystkie</a>
-                                                                                        </p>
-
+                                                                                         <br />   Przesylka kurierska pod adres: @Model.FullAddress została właśnie wysłana. Powinna dotrzeć do Ciebie w ciągu 24 godzin.<a style="word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #6DC6DD;font-weight: normal;text-decoration: underline;">
+                                                                                             <br /> Zapraszamy ponownie - odwiedź nas wkrótce!<br /> &nbsp;
+</a></p>
                                                                                     </td>
                                                                                 </tr>
                                                                             </tbody>
                                                                         </table>
-
                                                                     </td>
                                                                 </tr>
                                                             </tbody>
@@ -550,81 +520,7 @@ Content-Type: text/html; charset=utf-8
                                         <td align="center" valign="top" style="mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
                                             <table border="0" cellpadding="0" cellspacing="0" width="600" class="templateContainer" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
                                                 <tr>
-                                                    <td valign="top" class="bodyContainer" style="padding-top: 10px;padding-bottom: 10px;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-                                                        <table width="100%" class="mcnDividerBlock" border="0" cellspacing="0" cellpadding="0" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-                                                            <tbody class="mcnDividerBlockOuter">
-                                                                <tr>
-                                                                    <td class="mcnDividerBlockInner" style="padding: 18px;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-                                                                        <table width="100%" class="mcnDividerContent" style="border-top-color: #999999;border-top-width: 1px;border-top-style: solid;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" border="0" cellspacing="0" cellpadding="0">
-                                                                            <tbody>
-                                                                                <tr>
-                                                                                    <td style="mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-                                                                                        <span></span>
-                                                                                    </td>
-                                                                                </tr>
-                                                                            </tbody>
-                                                                        </table>
-                                                                    </td>
-                                                                </tr>
-                                                            </tbody>
-                                                        </table><table width="100%" class="mcnImageGroupBlock" border="0" cellspacing="0" cellpadding="0" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-                                                                    <tbody class="mcnImageGroupBlockOuter">
-
-                                                                        @{
-                                                                            IEnumerable<WebApplication3.Models.OrderItem> orderItems = Model.OrderItems;
-                                                                            int rows = (int)Math.Ceiling((double)orderItems.Count() / 2);
-                                                                        }
-
-                                                                        @for (int i = 0; i < rows; i++)
-                                                                        {
-                                                                            <tr>
-                                                                                <td class="mcnImageGroupBlockInner" valign="top" style="padding: 9px;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-
-
-                                                                                    <table width="273" align="left" class="mcnImageGroupContentContainer" border="0" cellspacing="0" cellpadding="0" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-                                                                                        <tbody>
-                                                                                            <tr>
-                                                                                                <td class="mcnImageGroupContent" valign="top" style="padding-top: 0px;padding-bottom: 0px;padding-left: 9px;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-
-                                                                                                    <a href="@Url.Action("Details", "Store", new { id = orderItems.ElementAt(i * 2).podzespol.PodzespolId }, "https")">
-
-                                                                                                        @* Warning: need to cast ViewBag before using in extension method! *@
-                                                                                                       
-
-                                                                                                    </a>
-
-                                                                                                </td>
-                                                                                            </tr>
-                                                                                        </tbody>
-                                                                                    </table>
-
-                                                                                    @if (i * 2 + 1 < orderItems.Count())
-                                                                                    {
-                                                                                        <table width="273" align="right" class="mcnImageGroupContentContainer" border="0" cellspacing="0" cellpadding="0" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-                                                                                            <tbody>
-                                                                                                <tr>
-                                                                                                    <td class="mcnImageGroupContent" valign="top" style="padding-top: 0px;padding-right: 9px;padding-bottom: 0px;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-
-                                                                                                        <a href="@Url.Action("Details", "Store", new { id = orderItems.ElementAt(i * 2).podzespol.PodzespolId }, "https")">
-
-                                                                                                            @Html.EmbedImage(Path.Combine((string)Model.CovertPath, orderItems.ElementAt(i * 2 + 1).podzespol.ConvertFileName), "", new { @width = 264, @class = "mcnImage", @style = "padding-bottom: 0px;max-width: 500px;border: 0;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;vertical-align: bottom;" })
-
-                                                                                                        </a>
-
-                                                                                                    </td>
-                                                                                                </tr>
-                                                                                            </tbody>
-                                                                                        </table>
-                                                                                    }
-
-                                                                                </td>
-                                                                            </tr>
-                                                                        }
-
-                                                                    </tbody>
-
-                                                        </table>
-                                                    </td>
+                                                    <td valign="top" class="bodyContainer" style="padding-top: 10px;padding-bottom: 10px;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"></td>
                                                 </tr>
                                             </table>
                                         </td>
@@ -646,25 +542,20 @@ Content-Type: text/html; charset=utf-8
                                                             <tbody class="mcnTextBlockOuter">
                                                                 <tr>
                                                                     <td class="mcnTextBlockInner" valign="top" style="mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-
                                                                         <table width="600" align="left" class="mcnTextContentContainer" border="0" cellspacing="0" cellpadding="0" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
                                                                             <tbody>
                                                                                 <tr>
-
                                                                                     <td class="mcnTextContent" valign="top" style="padding: 9px 18px;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #606060;font-family: Helvetica;font-size: 11px;line-height: 125%;text-align: left;">
-
-                                                                                        <em>Copyright © 2005, Wszystkie prawa zastrzeżone.</em><br>
-                                                                                        SpodIgły Sp. z o.o., ul. Muzyczna 11, 00-111 Warszawa<br>
+                                                                                        <em>Copyright © 2020, Wszystkie prawa zastrzeżone.</em><br>
+                                                                                        PCMaster Sp. z o.o., ul. XYZ 11, 00-111 Warszawa<br>
                                                                                         NIP: 113-123-31-23, KRS: 123441231<br>
                                                                                         <br>
-                                                                                        <strong>Zapisz się do newslettera:</strong><br>
-                                                                                        <a href="http://spodigly.pl/newsletter-subscribe" style="word-wrap: break-word;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #606060;font-weight: normal;text-decoration: underline;">http://spodigly.pl/newsletter-subscribe</a><br>
+
                                                                                         &nbsp;
                                                                                     </td>
                                                                                 </tr>
                                                                             </tbody>
                                                                         </table>
-
                                                                     </td>
                                                                 </tr>
                                                             </tbody>

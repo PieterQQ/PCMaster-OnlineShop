@@ -20,11 +20,11 @@ namespace Postal
                 imagePathOrUrl = html.ViewContext.HttpContext.Server.MapPath("/Content/Covers");
             }
             // Warning: better to change the code inside Postal - key can change after update
-            var imageEmbedder = (ImageEmbedder)html.ViewData["Postal.ImageEmbedder"];
-    //        var resource = imageEmbedder.ReferenceImage(imagePathOrUrl);
+         //   var imageEmbedder = (ImageEmbedder)html.ViewData["Postal.ImageEmbedder"];
+        //    var resource = imageEmbedder.ReferenceImage(imagePathOrUrl);
 
             TagBuilder mailtoAnchor = new TagBuilder("img");
-        //    mailtoAnchor.MergeAttribute("src", "cid:" + resource.ContentId);
+          //  mailtoAnchor.MergeAttribute("src", "cid:" + resource.ContentId);
             mailtoAnchor.MergeAttribute("alt", alt);
             mailtoAnchor.MergeAttributes(new RouteValueDictionary(htmlAttributes));
             return MvcHtmlString.Create(mailtoAnchor.ToString());

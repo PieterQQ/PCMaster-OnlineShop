@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SpodIglyMVC.Infrastructure
+namespace WebApplication3.Infrastructure
 {
     public class AppConfig
     {
@@ -14,7 +14,7 @@ namespace SpodIglyMVC.Infrastructure
         {
             get
             {
-                return "Photos";
+                return _photosFolderRelative;
             }
         }
 

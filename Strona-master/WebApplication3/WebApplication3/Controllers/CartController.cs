@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
-using SpodIglyMVC.Infrastructure;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;

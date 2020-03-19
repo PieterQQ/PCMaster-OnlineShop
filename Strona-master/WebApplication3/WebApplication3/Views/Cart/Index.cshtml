@@ -46,7 +46,7 @@
             </div>
 
             <div class="section-button-container">
-                <a class="button-link" href="">Kontynuuj zakupy</a>
+                <a class="button-link" href="@Url.Action("Index","Home")">Kontynuuj zakupy</a>
                 @if (Model.TotalPrice > 0)
                 {
                     <a class="button-link" id="cart-button-checkout" href="@Url.Action("Checkout","Cart")">Zapłać</a>

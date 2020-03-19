@@ -466,6 +466,10 @@
     <Compile Include="Migrations\202003190830293_UserOrderRelation.designer.cs">
       <DependentUpon>202003190830293_UserOrderRelation.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202003191642063_Elmah.cs" />
+    <Compile Include="Migrations\202003191642063_Elmah.designer.cs">
+      <DependentUpon>202003191642063_Elmah.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\CartItem.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -536,6 +540,9 @@
     <Content Include="Views\Emails\OrderConfirmation.cshtml" />
     <Content Include="Views\Emails\OrderConfirmation.Html.cshtml" />
     <Content Include="Views\Emails\OrderConfirmation.Text.cshtml" />
+    <Content Include="Views\Emails\ShippedConfirmation.cshtml" />
+    <Content Include="Views\Emails\ShippedConfirmation.Html.cshtml" />
+    <Content Include="Views\Emails\ShippedConfirmation.Text.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -561,6 +568,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202003190830293_UserOrderRelation.resx">
       <DependentUpon>202003190830293_UserOrderRelation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003191642063_Elmah.resx">
+      <DependentUpon>202003191642063_Elmah.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

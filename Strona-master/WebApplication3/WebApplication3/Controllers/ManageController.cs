@@ -16,7 +16,7 @@ using WebApplication3.ViewModels;
 using System.Net;
 using Hangfire;
 using WebApplication3.Controllers;
-using SpodIglyMVC.Infrastructure;
+
 
 namespace WebApplication3.Controllers
 {
@@ -25,14 +25,7 @@ namespace WebApplication3.Controllers
     {
         StoreContext db = new StoreContext();
 
-        //private IMailService mailService;
-
-        //public ManageController(StoreContext context, IMailService mailService)
-        //{
-        //    this.mailService = mailService;
-        //    this.db = context;
-        //}
-
+     
         public ManageController(ApplicationUserManager userManager)
         {
             UserManager = userManager;
@@ -300,21 +293,15 @@ namespace WebApplication3.Controllers
 
             if (orderToModify.OrderState == OrderState.Shipped)
             {
-                // Schedule confirmation
-                //string url = Url.Action("SendStatusEmail", "Manage", new { orderid = orderToModify.OrderId, lastname = orderToModify.LastName }, Request.Url.Scheme);
 
-                //BackgroundJob.Enqueue(() => Helpers.CallUrl(url));
-
-                //IMailService mailService = new HangFirePostalMailService();
-                //mailService.SendOrderShippedEmail(orderToModify);
-
-               // mailService.SendOrderShippedEmail(orderToModify);
-
-                //dynamic email = new Postal.Email("OrderShipped");
-                //email.To = orderToModify.Email;
-                //email.OrderId = orderToModify.OrderId;
-                //email.FullAddress = string.Format("{0} {1}, {2}, {3}", orderToModify.FirstName, orderToModify.LastName, orderToModify.Address, orderToModify.CodeAndCity);
-                //email.Send();
+                var orders = db.Orders.Include("OrderItems").Include("OrderItems.Podzespol").SingleOrDefault(o => o.OrderId == order.OrderId);
+                ShippedConfirmationEmail email = new ShippedConfirmationEmail();
+                email.To = orders.Email;
+                email.Cost = orders.TotalPrize;
+                email.OrderNumber = orders.OrderId;
+                email.FullAddress = string.Format("{0} {1}, {2}, {3}", orders.FirstName, orders.LastName, orders.Address, orders.CodeAndCity);
+                email.OrderItems = orders.OrderItems;
+                email.Send();
             }
 
             return order.OrderState;
@@ -330,11 +317,6 @@ namespace WebApplication3.Controllers
 
             if (orderToModify == null) return new HttpStatusCodeResult(HttpStatusCode.NotFound);
 
-         //   OrderShippedEmail email = new OrderShippedEmail();
-            //email.To = orderToModify.Email;
-            //email.OrderId = orderToModify.OrderId;
-            //email.FullAddress = string.Format("{0} {1}, {2}, {3}", orderToModify.FirstName, orderToModify.LastName, orderToModify.Address, orderToModify.CodeAndCity);
-            //email.Send();
 
             return new HttpStatusCodeResult(HttpStatusCode.OK);
         }

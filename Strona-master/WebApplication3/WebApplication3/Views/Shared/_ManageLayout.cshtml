@@ -38,19 +38,16 @@
             @if (@User.IsInRole("Admin"))
             {
                 <a class="manageLink" href="@Url.Action("AddProduct", "Manage")">
-                    Dodaj
+                    Dodaj produkt
                 </a>
-                <a class="manageLink" href="@Url.Content("~/hangfire")">
-                    Jobs
-                </a>
-                <a class="manageLink" href="@Url.Content("~/elmah")">
-                    Logi
-                </a>
+               
             }
             <a class="manageLink" href="@Url.Action("OrdersList", "Manage")" style="width: 100px">
                 Zamówienia
             </a>
-
+            <a class="manageLink" href="@Url.Content("~/elmah")" style="width: 100px">
+                Logi
+            </a>
             <a id="cart-header-link" href="@Url.Action("Index", "Cart")">
                 KOSZYK (<span id="cart-header-items-count">@Html.Action("GetCartItemsCount", "Cart")</span>)
                 <span id="cart-header-logo"></span>
