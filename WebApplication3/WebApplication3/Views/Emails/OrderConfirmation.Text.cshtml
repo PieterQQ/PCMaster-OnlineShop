@@ -1,0 +1,20 @@
+﻿@model WebApplication3.ViewModels.OrderConfirmationEmail
+Content-Type: text/plain; charset=utf-8
+
+Dziękujemy!
+
+Złożyłeś zamówienie w sklepie PCMaster.pl. Postaramy się, aby zamówione płyty dotarły do Ciebie w ciągu 24 godzin. 
+
+Prosimy o przelanie kwoty @Model.Cost zł, tytułem: "zamówienie nr @Model.OrderNumber" na nasze konto bankowe: 
+
+PCMaster Sp. z o.o
+ul. XYZ 11
+00-222 Warszawa
+PKO BP 10 1001 1100 0011 1100 0011
+
+Zaraz po otrzymaniu środków wyślemy przesyłkę kurierską pod adres: @Model.FullAddress.
+
+Tutaj znajdziesz szczegóły Twojego zamówienia: @Url.Action("OrdersList", "Manage", null, "https")
+
+Dziękujemy i zapraszamy ponownie!
+Sklep PCMaster.pl

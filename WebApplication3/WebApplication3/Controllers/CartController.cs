@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
+using SpodIglyMVC.Infrastructure;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -108,7 +109,14 @@ namespace WebApplication3.Controllers
                 TryUpdateModel(user.UserData);
                 await UserManager.UpdateAsync(user);
                 shoppingCartManager.EmptyCart();
-
+                var order = storeContext.Orders.Include("OrderItems").Include("OrderItems.Podzespol").SingleOrDefault(o => o.OrderId == newOrder.OrderId);
+                OrderConfirmationEmail email = new OrderConfirmationEmail();
+                email.To = order.Email;
+                email.Cost = order.TotalPrize;
+                email.OrderNumber = order.OrderId;
+                email.FullAddress = string.Format("{0} {1}, {2}, {3}", order.FirstName, order.LastName, order.Address, order.CodeAndCity);
+                email.OrderItems = order.OrderItems;
+                email.Send();
                 return RedirectToAction("OrderConfirmation");
             }
             else
