@@ -1,4 +1,4 @@
-﻿@model WebApplication3.Models.EditProductViewModel
+﻿@model WebApplication3.ViewModels.EditProductViewModel
 @{
     ViewBag.Title = "AddProduct";
     Layout = "~/Views/Shared/_ManageLayout.cshtml";
@@ -42,7 +42,7 @@
                 </tr>
                 <tr>
                     <td>@Html.LabelFor(o => o.Podzespol.Description, "Opis:")</td>
-                    <td>@Html.TextBoxFor(o => o.Podzespol.Description)</td>
+                    <td>@Html.TextAreaFor(o => o.Podzespol.Description)</td>
                     <td>@Html.ValidationMessageFor(o => o.Podzespol.Description)</td>
                 </tr>
                 <tr>
@@ -80,14 +80,13 @@
                         {
                             if (Model.Podzespol.IsHidden)
                             {
-                                @* A bit dangerous - CSRF. Nested form.. Need to use form attr or JS *@
+                   
                                 <a href="@Url.Action("UnhideProduct", "Manage", new { PodzespolId = Model.Podzespol.PodzespolId })" style="display: block; margin-top: 15px; font-weight: bold;">
                                     Przywróć
                                 </a>
                             }
                             else
                             {
-                                @* A bit dangerous - CSRF. Nested form.. Need to use form attr or JS *@
                                 <a href="@Url.Action("HideProduct", "Manage", new { PodzespolId = Model.Podzespol.PodzespolId })" style="display: block; margin-top: 15px; font-weight: bold;">
                                     Usuń
                                 </a>

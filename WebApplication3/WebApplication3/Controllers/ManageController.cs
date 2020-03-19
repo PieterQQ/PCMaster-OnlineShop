@@ -16,6 +16,7 @@ using WebApplication3.ViewModels;
 using System.Net;
 using Hangfire;
 using WebApplication3.Controllers;
+using SpodIglyMVC.Infrastructure;
 
 namespace WebApplication3.Controllers
 {
@@ -268,7 +269,7 @@ namespace WebApplication3.Controllers
 
         public ActionResult OrdersList()
         {
-            bool isAdmin = User.IsInRole("Admin");
+            bool isAdmin = User.IsInRole(Consts.AdminRole);
             ViewBag.UserIsAdmin = isAdmin;
 
             IEnumerable<Order> userOrders;   
@@ -282,7 +283,7 @@ namespace WebApplication3.Controllers
             else
             {
                 var userId = User.Identity.GetUserId();
-                userOrders = db.Orders.Where(o => o.ApplicationUser_Id == userId).Include("OrderItems").
+                userOrders = db.Orders.Where(o => o.UserId == userId).Include("OrderItems").
                     OrderByDescending(o => o.DateCreated).ToArray();
             }           
             
@@ -365,27 +366,27 @@ namespace WebApplication3.Controllers
         }
 
         [Authorize(Roles = "Admin")]
-        public ActionResult AddProduct(int? albumId, bool? confirmSuccess)
+        public ActionResult AddProduct(int? podzespolId, bool? confirmSuccess)
         {
-            if (albumId.HasValue)
+            if (podzespolId.HasValue)
                 ViewBag.EditMode = true;
             else
                 ViewBag.EditMode = false;
 
-            var result = new EditProductViewModel();
+            var result = new ViewModels.EditProductViewModel();
             var podzespoly = db.Podzespoly.ToArray();
             result.podzespoly = podzespoly;
             result.ConfirmSuccess = confirmSuccess;
 
             Podzespol a;
 
-            if (!albumId.HasValue)
+            if (!podzespolId.HasValue)
             {
                 a = new Podzespol();
             }
             else
             {
-                a = db.Podzespol.Find(albumId);
+                a = db.Podzespol.Find(podzespolId);
             }
 
             result.Podzespol = a;
@@ -394,7 +395,7 @@ namespace WebApplication3.Controllers
         }
 
         [HttpPost]
-        public ActionResult AddProduct(HttpPostedFileBase file, EditProductViewModel model)
+        public ActionResult AddProduct(HttpPostedFileBase file, ViewModels.EditProductViewModel model)
         {
             if (model.Podzespol.PodzespolId > 0)
             {
@@ -417,10 +418,9 @@ namespace WebApplication3.Controllers
                     var fileExt = Path.GetExtension(file.FileName);
                     var filename = Guid.NewGuid() + fileExt;
 
-                //    var path = Path.Combine(Server.MapPath(AppConfig.PhotosFolderRelative), filename);
-                   // file.SaveAs(path);
+                    var path = Path.Combine(Server.MapPath("/Content/Covers"), filename);
+                    file.SaveAs(path);
 
-                    // Save info to DB
                     model.Podzespol.ConvertFileName = filename;
                     model.Podzespol.DateAdded = DateTime.Now;
 
@@ -432,26 +432,26 @@ namespace WebApplication3.Controllers
                 else
                 {
                     ModelState.AddModelError("", "Nie wskazano pliku.");
-                    var genres = db.Podzespoly.ToArray();
-                    model.podzespoly = genres;
+                    var podzespoly = db.Podzespoly.ToArray();
+                    model.podzespoly = podzespoly;
                     return View(model);
                 } 
             }
            
         }
 
-        public ActionResult HideProduct(int podzespolId)
+        public ActionResult HideProduct(int PodzespolId)
         {
-            var podzespol = db.Podzespol.Find(podzespolId);
+            var podzespol = db.Podzespol.Find(PodzespolId);
             podzespol.IsHidden = true;
             db.SaveChanges();
 
             return RedirectToAction("AddProduct", new { confirmSuccess = true });
         }
 
-        public ActionResult UnhideProduct(int albumId)
+        public ActionResult UnhideProduct(int PodzespolId)
         {
-            var podzespol = db.Podzespol.Find(albumId);
+            var podzespol = db.Podzespol.Find(PodzespolId);
             podzespol.IsHidden = false;
             db.SaveChanges();
 

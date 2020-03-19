@@ -588,9 +588,9 @@ ul.ThreeColumnsStaticCoversList {
         -webkit-transition-duration: 3s;
         transition-duration: 3s;
     }
-
+     
     #orders-table tr:nth-child(3n+1) {
-        background-color: #f1f1f1;
+        background-color: #389448;
         -moz-transition-duration: 3s;
         -o-transition-duration: 3s;
         -webkit-transition-duration: 3s;

@@ -17,6 +17,7 @@
         protected override void Seed(WebApplication3.Dal.StoreContext context)
         {
             StoreInitializer.SeedStoreDate(context);
+            StoreInitializer.InitializeIdentityForEF(context);
         }
     }
 }

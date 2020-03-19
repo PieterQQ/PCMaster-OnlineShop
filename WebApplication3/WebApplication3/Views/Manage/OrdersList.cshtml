@@ -41,7 +41,9 @@
                             }
                             else
                             {
-                                @Html.DisplayFor(o => order.OrderState)
+                                <div class="shippedOrder">
+                                    @Html.DisplayFor(o => order.OrderState)
+                                </div>
                             }
 
                         </td>
@@ -108,10 +110,9 @@
 
 </div>
 
-<script src="~/Scripts/jquery-1.10.2.js"></script>
+<script src="~/Scripts/jquery-3.4.1.js"></script>
 <script>
     $(".orderstateddl").on('change', function (e) {
-        //e.preventDefault();
 
         var f = $(this.form);
         var tr = f.closest("tr");

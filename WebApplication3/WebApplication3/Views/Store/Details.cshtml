@@ -55,6 +55,10 @@
                 <div id="product-details-info">
                     Bezpłatna przesyłka. Czas realizacji: 24godziny.
                 </div>
+                @if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
+                {
+                <a href="@Url.Action("AddProduct", "Manage", new { podzespolId = Model.PodzespolId })" style="margin-top: 20px; font-weight: bold; display: block;">Edytuj</a>
+                }
             </div>
 
         </section>
