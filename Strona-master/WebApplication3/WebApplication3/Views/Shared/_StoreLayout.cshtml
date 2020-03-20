@@ -16,14 +16,17 @@
             <a id="facebook-header" href="https://www.facebook.com/">
                 DOŁĄCZ DO NAS JUŻ DZIŚ
             </a>
+           
             <a id="cart-header-link" href="@Url.Action("Index","Cart")">
                 KOSZYK (<span id="cart-header-items-count">@Html.Action("GetCartItemsCount", "Cart")</span>)
                 <span id="cart-header-logo"></span>
                 <span></span>
-            </a>
+            </a><a id="profile-header-logo" href="@Url.Action("Index","Manage")">
+    <span></span>
+</a>
             @Html.Partial("_PartialView")
            
-
+           
         </div>
         <a id="main-header-logo" href="@Url.Content("~/")">
             <img src="@Url.Content("../Content/Images/spodigly-logo-main.png.png")" class="center" />

@@ -148,7 +148,7 @@ a:hover, a:visited, a:link, a:active {
 }
 
 #cart-header-link {
-    width: 143px;
+    width: 140px;
     height: 42px;
     background-color: #116466;
     color: white;
@@ -164,6 +164,15 @@ a:hover, a:visited, a:link, a:active {
         background-color: #116466;
         float: right;
         background-image: url(../Content/Images/cart_white.png);
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    #profile-header-logo {
+        width: 42px;
+        height: 42px;
+        background-color: #116466;
+        float: right;
+        background-image: url(../Content/Images/profile.png);
         background-repeat: no-repeat;
         background-position: center;
     }

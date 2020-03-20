@@ -42,12 +42,15 @@
                 </a>
                
             }
-            <a class="manageLink" href="@Url.Action("OrdersList", "Manage")" style="width: 100px">
+            <a class="manageLink" href="@Url.Action("OrdersList", "Manage")" style="width: 120px">
                 Zamówienia
             </a>
+@if (@User.IsInRole("Admin"))
+{
             <a class="manageLink" href="@Url.Content("~/elmah")" style="width: 100px">
                 Logi
             </a>
+}
             <a id="cart-header-link" href="@Url.Action("Index", "Cart")">
                 KOSZYK (<span id="cart-header-items-count">@Html.Action("GetCartItemsCount", "Cart")</span>)
                 <span id="cart-header-logo"></span>

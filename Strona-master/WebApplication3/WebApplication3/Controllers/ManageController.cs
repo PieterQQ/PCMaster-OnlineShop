@@ -16,7 +16,7 @@ using WebApplication3.ViewModels;
 using System.Net;
 using Hangfire;
 using WebApplication3.Controllers;
-
+using System.Web.Hosting;
 
 namespace WebApplication3.Controllers
 {
@@ -296,12 +296,15 @@ namespace WebApplication3.Controllers
 
                 var orders = db.Orders.Include("OrderItems").Include("OrderItems.Podzespol").SingleOrDefault(o => o.OrderId == order.OrderId);
                 ShippedConfirmationEmail email = new ShippedConfirmationEmail();
-                email.To = orders.Email;
-                email.Cost = orders.TotalPrize;
-                email.OrderNumber = orders.OrderId;
-                email.FullAddress = string.Format("{0} {1}, {2}, {3}", orders.FirstName, orders.LastName, orders.Address, orders.CodeAndCity);
-                email.OrderItems = orders.OrderItems;
-                email.Send();
+                HostingEnvironment.QueueBackgroundWorkItem(ct =>
+                {
+                    email.To = orders.Email;
+                    email.Cost = orders.TotalPrize;
+                    email.OrderNumber = orders.OrderId;
+                    email.FullAddress = string.Format("{0} {1}, {2}, {3}", orders.FirstName, orders.LastName, orders.Address, orders.CodeAndCity);
+                    email.OrderItems = orders.OrderItems;
+                    // email.Send();
+                });
             }
 
             return order.OrderState;

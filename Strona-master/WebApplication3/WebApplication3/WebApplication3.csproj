@@ -279,6 +279,8 @@
     <Content Include="Content\Images\icons-36-black.png" />
     <Content Include="Content\Images\icons-36-white.png" />
     <Content Include="Content\Images\new.png" />
+    <Content Include="Content\Images\profile.jpg" />
+    <Content Include="Content\Images\profile.png" />
     <Content Include="Content\Images\searchlogo.png" />
     <Content Include="Content\Images\spodigly-logo-main.png.png" />
     <Content Include="Content\Images\twitter-share.png" />
