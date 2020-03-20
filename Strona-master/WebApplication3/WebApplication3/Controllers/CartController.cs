@@ -122,7 +122,7 @@ namespace WebApplication3.Controllers
                 email.FullAddress = string.Format("{0} {1}, {2}, {3}", order.FirstName, order.LastName, order.Address, order.CodeAndCity);
                 email.OrderItems = order.OrderItems;
  
-                //email.Send();
+                email.Send();
                 });
                 return RedirectToAction("OrderConfirmation");
             }

@@ -259,7 +259,6 @@
     <Content Include="Content\ikony\pobrany plik.jpg" />
     <Content Include="Content\ikony\promos.png" />
     <Content Include="Content\ikony\ram.jpg" />
-    <Content Include="Content\ikony\slider.png" />
     <Content Include="Content\ikony\zasilacz.jpg" />
     <Content Include="Content\Images\ajax-loader.gif" />
     <Content Include="Content\Images\ajax-loader.png" />
@@ -412,6 +411,7 @@
     <None Include="NLog.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Properties\PublishProfiles\PCMaster1 - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />

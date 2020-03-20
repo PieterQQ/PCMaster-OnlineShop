@@ -303,7 +303,8 @@ namespace WebApplication3.Controllers
                     email.OrderNumber = orders.OrderId;
                     email.FullAddress = string.Format("{0} {1}, {2}, {3}", orders.FirstName, orders.LastName, orders.Address, orders.CodeAndCity);
                     email.OrderItems = orders.OrderItems;
-                    // email.Send();
+                    email.Send();
+                    
                 });
             }
 
