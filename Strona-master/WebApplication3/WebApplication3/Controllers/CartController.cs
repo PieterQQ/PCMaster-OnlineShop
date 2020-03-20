@@ -4,8 +4,11 @@ using Microsoft.AspNet.Identity.Owin;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using System.Net.Mail;
 using System.Threading.Tasks;
 using System.Web;
+using System.Web.Hosting;
 using System.Web.Mvc;
 using WebApplication3.Dal;
 using WebApplication3.Infrastructure;
@@ -110,13 +113,17 @@ namespace WebApplication3.Controllers
                 await UserManager.UpdateAsync(user);
                 shoppingCartManager.EmptyCart();
                 var order = storeContext.Orders.Include("OrderItems").Include("OrderItems.Podzespol").SingleOrDefault(o => o.OrderId == newOrder.OrderId);
+                HostingEnvironment.QueueBackgroundWorkItem(ct => {
                 OrderConfirmationEmail email = new OrderConfirmationEmail();
+          
                 email.To = order.Email;
                 email.Cost = order.TotalPrize;
                 email.OrderNumber = order.OrderId;
                 email.FullAddress = string.Format("{0} {1}, {2}, {3}", order.FirstName, order.LastName, order.Address, order.CodeAndCity);
                 email.OrderItems = order.OrderItems;
+ 
                 email.Send();
+                });
                 return RedirectToAction("OrderConfirmation");
             }
             else

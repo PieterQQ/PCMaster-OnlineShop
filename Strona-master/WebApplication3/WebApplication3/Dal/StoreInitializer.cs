@@ -31,7 +31,7 @@ namespace WebApplication3.Dal
                 new podzespoly { PodzespolyId=3,Name="Zasilacz", IconFileName="zasilacz.jpg"},
                 new podzespoly { PodzespolyId=4,Name="RAM", IconFileName="ram.jpg"},
                 new podzespoly { PodzespolyId=5,Name="Chłodzenie", IconFileName="cooler.jpg"},
-                new podzespoly { PodzespolyId=6,Name="Motherboard", IconFileName="pobrany plik.jpg"},
+                new podzespoly { PodzespolyId=6,Name="Motherboard", IconFileName="plytaglowna.jpg"},
                 new podzespoly { PodzespolyId=7,Name="Obudowy", IconFileName="case.jpg"},
                 new podzespoly { PodzespolyId=8,Name="Monitor", IconFileName="monitor.jpg"},
                 new podzespoly { PodzespolyId=9,Name="Myszka", IconFileName="mickey.jpg"},

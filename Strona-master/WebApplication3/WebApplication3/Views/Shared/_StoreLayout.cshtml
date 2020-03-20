@@ -13,8 +13,8 @@
 <body>
     <header>
         <div style="overflow: hidden;">
-            <a id="facebook-header" href="https://www.facebook.com/eduwebpl">
-                DOŁĄCZ DO PRZEMKA JUZ DZIS
+            <a id="facebook-header" href="https://www.facebook.com/">
+                DOŁĄCZ DO NAS JUŻ DZIŚ
             </a>
             <a id="cart-header-link" href="@Url.Action("Index","Cart")">
                 KOSZYK (<span id="cart-header-items-count">@Html.Action("GetCartItemsCount", "Cart")</span>)
@@ -48,9 +48,7 @@
                 <li><a href="@Url.Action("StaticContent", "Home", new { viewname = "Regulamin" })">Regulamin</a></li>
             </ul>
         </nav>
-        <div id="footer-cd-logo">
-            <img src="@Url.Content("~/Content/images/footer-cd.png")" />
-        </div>
+        
 
         <div id="footer-copyright">
             Copyright &copy; 2020 PieterQ

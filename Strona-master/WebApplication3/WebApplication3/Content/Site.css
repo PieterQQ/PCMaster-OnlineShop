@@ -134,9 +134,9 @@ a:hover, a:visited, a:link, a:active {
 }
 
 #facebook-header {
-    width: 233px;
+    width: 200px;
     height: 42px;
-    background-color: #39312E;
+    background-color: #116466;
     color: white;
     float: left;
     line-height: 40px;
@@ -150,7 +150,7 @@ a:hover, a:visited, a:link, a:active {
 #cart-header-link {
     width: 143px;
     height: 42px;
-    background-color: #39312E;
+    background-color: #116466;
     color: white;
     float: right;
     line-height: 40px;
@@ -161,7 +161,7 @@ a:hover, a:visited, a:link, a:active {
     #cart-header-link > #cart-header-logo {
         width: 42px;
         height: 42px;
-        background-color: #585858;
+        background-color: #116466;
         float: right;
         background-image: url(../Content/Images/cart_white.png);
         background-repeat: no-repeat;
@@ -180,8 +180,8 @@ a:hover, a:visited, a:link, a:active {
 
 nav.genres-horizontal ul {
     overflow: hidden;
-    border-left: 1px solid #E5E5E5;
-    border-top: 1px solid #E5E5E5;
+    border-left: 1px solid #D1E8E2;
+    border-top: 1px solid #D1E8E2;
     font-size: 25px;
     font-family: 'Segoe UI Semibold', 'Segoe WP', 'Segoe UI';
 }
@@ -190,19 +190,21 @@ nav.genres-horizontal ul {
         margin: auto;
         float: left;
         width: 330px;
-        /*padding-left: 50px;*/
-        height: 120px;
+       padding-top:20px;
+            padding-left: 20px;
+        height: 80px;
         text-align: left;
         border-right: 1px solid #E5E5E5;
         border-bottom: 1px solid #E5E5E5;
-        line-height: 120px;
+        line-height: 40px;
     }
 
         nav.genres-horizontal ul li a {
             width: 100%;
             display: block;
             height: 100%;
-            padding-left: 157px;
+            padding-top:0px;
+            padding-left: 90px;
             background-repeat: no-repeat;
             background-position-x: 1px;
             background-position-y: 1%;
@@ -303,7 +305,7 @@ nav.genres-vertical {
     #product-details-share > div {
         width: 1px;
         height: 120px;
-        border-left: 1px solid #E5E5E5;
+        border-left: 1px solid #2C3531;
         float: left;
     }
 
@@ -323,7 +325,7 @@ nav.genres-vertical {
 }
 
     #product-details-right #product-details-names {
-        border: 5px solid #7C7C7C;
+        border: 5px solid #116466;
     }
 
         #product-details-right #product-details-names > h1 {
@@ -332,7 +334,7 @@ nav.genres-vertical {
             font-size: 38px;
             text-transform: uppercase;
             font-weight: normal;
-            color: #39312d;
+            color: #2c3531;
             text-align: center;
         }
 
@@ -343,7 +345,7 @@ nav.genres-vertical {
             font-family: 'Segoe UI Light';
             text-transform: uppercase;
             font-weight: normal;
-            color: #39312d;
+            color: #2c3531;
             text-align: center;
         }
 
@@ -356,7 +358,7 @@ nav.genres-vertical {
         width: 332px;
         height: 67px;
         text-align: center;
-        background-color: #585858;
+        background-color: #116466;
         color: white;
         font-size: 56px;
         line-height: 56px;
@@ -373,8 +375,8 @@ nav.genres-vertical {
         float: left;
         width: 73px;
         height: 67px;
-        background-color: #39312E;
-        background-image: url(../Content/Images/cart-details.png);
+        background-color: #116466;
+        background-image: url(../Content/Images/cart_white.png);
         background-repeat: no-repeat;
         background-position: center center;
     }
@@ -394,7 +396,7 @@ nav.genres-vertical {
     color: #39312E;
     margin-top: 40px;
     text-align: justify;
-    border-top: 1px solid #E5E5E5;
+    border-top: 1px solid #116466;
     padding-top: 40px;
 }
 
@@ -590,7 +592,7 @@ ul.ThreeColumnsStaticCoversList {
     }
      
     #orders-table tr:nth-child(3n+1) {
-        background-color: #389448;
+        background-color: #10a8ac;
         -moz-transition-duration: 3s;
         -o-transition-duration: 3s;
         -webkit-transition-duration: 3s;
@@ -747,7 +749,7 @@ div.section-header {
 
 .button-link {
     height: 40px;
-    background-color: #595959;
+    background-color: #116466;
     color: #dfdfdf;
     text-transform: uppercase;
     font-size: 18px;
@@ -795,7 +797,7 @@ a.button-link:visited, a.button-link:link, a.button-link:active {
             #checkout-address-table tr td:nth-child(3) {
                 padding-left: 10px;
                 font-size: 15px;
-                color: red;
+                color: #D9B08C;
             }
 
     #checkout-address-table input {
@@ -841,7 +843,7 @@ a.button-link:visited, a.button-link:link, a.button-link:active {
             #userdata-address-table tr td:nth-child(3) {
                 padding-left: 10px;
                 font-size: 15px;
-                color: red;
+                color: #D9B08C;
             }
 
     #userdata-address-table input {
@@ -887,7 +889,7 @@ a.button-link:visited, a.button-link:link, a.button-link:active {
             #albumedit-address-table tr td:nth-child(3) {
                 padding-left: 10px;
                 font-size: 15px;
-                color: red;
+                color: #D9B08C;
             }
 
     #albumedit-address-table input {
@@ -1133,7 +1135,7 @@ div.upload input {
 footer {
     width: 100%;
     height: 42px;
-    background-color: #585858;
+    background-color: #116466;
     margin-top: 75px;
     /*overflow: hidden;*/
 }
@@ -1178,7 +1180,7 @@ footer {
     footer #footer-copyright {
         width: 215px;
         float: right;
-        background-color: #39312E;
+        background-color: #116466;
         line-height: 42px;
         height: 100%;
         font-size: 14px;
@@ -1194,26 +1196,41 @@ footer {
     font-size: 16px;
     text-align: right;
 }
+* {box-sizing:border-box}
 
-/*nav ul li {
-        margin: auto;
-        float: left;
-        width: 282px;
-        padding-left: 50px;
-        height: 54px;
-        text-align: left;
-        border-right: 1px solid #E5E5E5;
-        border-bottom: 1px solid #E5E5E5;
-        line-height: 54px;
-    }
 
-        nav ul li a {
-            width: 100%;
-            height: 100%;
-        }
 
-            nav ul li a img {
-                vertical-align: middle; 
-                margin-right: 30px;
-            }*/
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
 
