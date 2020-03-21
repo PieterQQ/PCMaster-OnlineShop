@@ -239,6 +239,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Covers\1.jpg" />
+    <Content Include="Content\Covers\10.jpg" />
     <Content Include="Content\Covers\2.jpg" />
     <Content Include="Content\Covers\3.jpg" />
     <Content Include="Content\Covers\4.jpg" />
@@ -246,6 +247,7 @@
     <Content Include="Content\Covers\6.jpg" />
     <Content Include="Content\Covers\7.jpg" />
     <Content Include="Content\Covers\8.jpg" />
+    <Content Include="Content\Covers\9.jpg" />
     <Content Include="Content\ikony\alternative.png" />
     <Content Include="Content\ikony\case.jpg" />
     <Content Include="Content\ikony\cooler.jpg" />
@@ -264,7 +266,6 @@
     <Content Include="Content\Images\ajax-loader.png" />
     <Content Include="Content\Images\baner-main.png" />
     <Content Include="Content\Images\bestseller.png" />
-    <Content Include="Content\Images\cart-details.png" />
     <Content Include="Content\Images\cart.png" />
     <Content Include="Content\Images\cart_white.png" />
     <Content Include="Content\Images\fb-login.png" />
@@ -278,7 +279,6 @@
     <Content Include="Content\Images\icons-36-black.png" />
     <Content Include="Content\Images\icons-36-white.png" />
     <Content Include="Content\Images\new.png" />
-    <Content Include="Content\Images\profile.jpg" />
     <Content Include="Content\Images\profile.png" />
     <Content Include="Content\Images\searchlogo.png" />
     <Content Include="Content\Images\spodigly-logo-main.png.png" />
