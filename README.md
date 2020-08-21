@@ -14,9 +14,6 @@
 * [EntityFramework](https://docs.microsoft.com/en-us/ef/)
 * [Owin](https://www.codeproject.com/Articles/1263539/OWIN-OAuth2-Authentication-for-Facebook-and-Google)
 * [Postal](https://github.com/andrewdavey/postal)
-* [Swagger](https://swagger.io/)
-* [JWT](https://jwt.io/)
-* Continuos Integration (TravicCI)
 
 ## Setup
 If you want to make it works properly, you have to uncomment or change mailsettings in Web.config, also you have to set Database 
